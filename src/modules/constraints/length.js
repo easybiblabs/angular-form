@@ -1,4 +1,4 @@
-module.exports = function(BaseConstraint){
+module.exports = function(BaseConstraint) {
   'use strict';
 
   /**
@@ -34,7 +34,7 @@ module.exports = function(BaseConstraint){
       this.result[fieldName] = {'validationMessage': {}};
     }
     this.result[fieldName].
-        validationMessage[this.constraints[constrKey]] = constrVal;
+      validationMessage[this.constraints[constrKey]] = constrVal;
   };
 
   /**
@@ -66,5 +66,5 @@ module.exports = function(BaseConstraint){
     this.result[fieldName][this.constraints[constrKey]] = constrVal;
   };
 
-  return { Schema: Schema, Form: Form};
+  return {Schema: Schema, Form: Form};
 };

@@ -48,5 +48,5 @@ module.exports = function(BaseConstraint) {
     this.result[fieldName][this.constraints[constrKey]] = constrVal;
   };
 
-  return { Schema: Schema, Form: Form};
+  return {Schema: Schema, Form: Form};
 };

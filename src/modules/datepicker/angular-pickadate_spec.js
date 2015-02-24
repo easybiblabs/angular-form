@@ -1,13 +1,3 @@
-/*define([
- 'form/application/bootstrap',
- 'text!form/datepicker/angular-pickadate-fixture.html',
- 'angular',
- 'moment',
- 'jquery',
- 'pickadate/picker',
- 'pickadate/picker.date'
- ], function(app, html, angular, moment) {
- */
 require('./index');
 require('pickadate/picker');
 require('pickadate/picker.date');

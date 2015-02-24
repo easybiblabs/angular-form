@@ -11,11 +11,8 @@ module.exports = (function() {
   // so we make it supported.
 
   angular.module('form-constraints', [
-    /*
-     'ObjectPath',
-     'schemaForm',*/
     'pascalprecht.translate',
-     'time'
+    'time'
 
   ])
     .factory('BaseConstraint', require('./base'))

@@ -76,5 +76,5 @@ module.exports = function(BaseConstraint) {
   Schema.prototype = new BaseConstraint();
   Schema.prototype.constructor = Schema;
 
-  return { Schema: Schema, Form: Form};
+  return {Schema: Schema, Form: Form};
 };

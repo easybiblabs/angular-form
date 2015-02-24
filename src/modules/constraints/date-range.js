@@ -1,4 +1,4 @@
-module.exports = function(BaseConstraint, Time){
+module.exports = function(BaseConstraint, Time) {
   'use strict';
 
   /**
@@ -26,7 +26,7 @@ module.exports = function(BaseConstraint, Time){
 
     try {
       this.result[fieldName][this.constraints[constrKey]] =
-          Time.getLocaleString(constrVal);
+        Time.getLocaleString(constrVal);
     } catch (e) {
       this.result[fieldName][this.constraints[constrKey]] = constrVal;
     }
@@ -49,7 +49,8 @@ module.exports = function(BaseConstraint, Time){
    * params: fieldName, constrKey, constrVal
    * currently no constraint for schema
    */
-  Schema.prototype.add = function() {};
+  Schema.prototype.add = function() {
+  };
 
-  return { Schema: Schema, Form: Form };
+  return {Schema: Schema, Form: Form};
 };

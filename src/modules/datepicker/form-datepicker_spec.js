@@ -42,7 +42,6 @@ describe.skip('datepicker addon', function() {
           '</form>'
         );
 
-        console.log(template);
         $compile(template)(scope);
         scope.$apply();
         // assertions

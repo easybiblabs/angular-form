@@ -1,4 +1,4 @@
-module.exports = (function(){
+module.exports = (function() {
   'use strict';
 
   function ConstraintMerger(ConstraintMapper, $translate) {
@@ -14,29 +14,29 @@ module.exports = (function(){
     var self = this;
     angular.forEach(fieldNames, function(fieldName) {
       angular.forEach(backendConstraints[fieldName],
-          function(constraintValues, constrGrp) {
-            // when constraint is available on the frontend
-            // iterate though serverside constraints and map them to frontend
-            angular.forEach(constraintValues, function(constrVal, constrKey) {
-              var mapper = self.constraintMapper.getMapper(constrGrp);
-              if (mapper) {
-                if (angular.isString(constrVal)) {
-                  constrVal = self.$translate.instant(constrVal);
-                }
-                // to work around less informative
-                // constraint export from backend
-
-                // until that gets improved
-                // we need to check here
-                // if we need to set that field to required
-                if (constrGrp === 'NotBlank') {
-                  mapper.map(fieldName, constrGrp);
-                }
-
-                mapper.map(fieldName, constrKey, constrVal);
+        function(constraintValues, constrGrp) {
+          // when constraint is available on the frontend
+          // iterate though serverside constraints and map them to frontend
+          angular.forEach(constraintValues, function(constrVal, constrKey) {
+            var mapper = self.constraintMapper.getMapper(constrGrp);
+            if (mapper) {
+              if (angular.isString(constrVal)) {
+                constrVal = self.$translate.instant(constrVal);
               }
-            });
+              // to work around less informative
+              // constraint export from backend
+
+              // until that gets improved
+              // we need to check here
+              // if we need to set that field to required
+              if (constrGrp === 'NotBlank') {
+                mapper.map(fieldName, constrGrp);
+              }
+
+              mapper.map(fieldName, constrKey, constrVal);
+            }
           });
+        });
     });
 
     return self.constraintMapper.getResult();
@@ -80,7 +80,7 @@ module.exports = (function(){
     process: function(backendConstraints, frontendConstraints) {
       var form = frontendConstraints.form,
         schema = frontendConstraints.schema,
-        myDiff = diff.call(this, backendConstraints, getFieldNames(schema || { properties: {}}));
+        myDiff = diff.call(this, backendConstraints, getFieldNames(schema || {properties: {}}));
 
       merge.call(this, myDiff, form, schema);
       translateRecursive.call(this, frontendConstraints);

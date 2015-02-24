@@ -1,6 +1,4 @@
 require('./index');
-//form/constraints/choice
-//'form/constraintMapper/mapper'
 
 describe('choice constraint mapper', function() {
   'use strict';

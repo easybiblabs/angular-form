@@ -1,7 +1,5 @@
 require('./index');
-window.ObjectPath = require('objectpath');
 require('angular-schema-form');
-
 
 describe('sfInvalidate', function() {
   'use strict';

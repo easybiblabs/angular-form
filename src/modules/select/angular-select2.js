@@ -1,4 +1,5 @@
 module.exports = function($timeout) {
+  'use strict';
 
   return {
     restrict: 'A',

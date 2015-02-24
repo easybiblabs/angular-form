@@ -27,7 +27,7 @@ module.exports = function(BaseConstraint) {
       this.result[fieldName] = {'validationMessage': {}};
     }
     this.result[fieldName].
-        validationMessage[this.constraints[constrKey]] = constrVal;
+      validationMessage[this.constraints[constrKey]] = constrVal;
   };
 
   /**
@@ -57,5 +57,5 @@ module.exports = function(BaseConstraint) {
     this.result[fieldName].pattern = new RegExp(regexpString);
   };
 
-  return { Schema: Schema, Form: Form};
+  return {Schema: Schema, Form: Form};
 };

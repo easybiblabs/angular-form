@@ -9,7 +9,7 @@ describe('constraintMerger', function() {
   beforeEach(angular.mock.module('form-constraints'));
 
   beforeEach(inject(function(_ConstraintMerger_) {
-    ConstraintMerger = _ConstraintMerger_
+    ConstraintMerger = _ConstraintMerger_;
   }));
 
   describe('#diff()', function() {
@@ -92,7 +92,6 @@ describe('constraintMerger', function() {
           }
         }
       };
-
 
       ConstraintMerger.process(backendConstraints, frontendConstraints);
 

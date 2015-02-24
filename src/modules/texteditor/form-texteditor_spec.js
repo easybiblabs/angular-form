@@ -1,4 +1,5 @@
 require('./index');
+require('summernote');
 require('angular-summernote');
 require('angular-schema-form');
 require('../decorators');
@@ -43,7 +44,7 @@ describe.skip('texteditor addon', function() {
         }];
 
         var tmpl = angular.element(
-          '<form sf-schema="schema" sf-form="form" sf-model="person">' +
+          '<form sf-schema="schema" sf-form="form" sf-model="person" sf-decorator="scholarDecorator">' +
           '</form>'
         );
 

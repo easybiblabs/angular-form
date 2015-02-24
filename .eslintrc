@@ -5,6 +5,8 @@
     'mocha': true
   },
   'globals': {
+    '$': true,
+    'moment': true,
     'jQuery': true,
     'angular': true,
     'chrome': true,

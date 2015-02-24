@@ -1,4 +1,5 @@
 module.exports = function(schemaFormProvider, schemaFormDecoratorsProvider, sfPathProvider) {
+  'use strict';
 
   // creates an default titleMap list from an enum, i.e. a list of strings.
   var enumToTitleMap = function(enm) {

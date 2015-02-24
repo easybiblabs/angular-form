@@ -5,8 +5,8 @@ window.ObjectPath = require('objectpath');
 require('angular-loading-bar');
 require('angular-translate');
 require('schema-form');
+require('summernote');
 require('angular-summernote');
-require('summernote-lang');
 require('select2');
 
 require('./../modules/sf-attrs');
@@ -18,6 +18,7 @@ require('./../modules/select');
 
 require('./../utility/time');
 require('./../utility/objectpath');
+require('./../utility/summernote-lang');
 
 module.exports = function(){
   'use strict';

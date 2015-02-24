@@ -1,4 +1,4 @@
-module.exports = (function(){
+module.exports = (function() {
   'use strict';
 
   // this hack is needed because

@@ -1,6 +1,7 @@
 window.$ = window.jQuery = require('jquery');
 require('angular');
 require('angular-mocks');
+require('summernote');
 require('angular-summernote');
 
 window.ObjectPath = require('objectpath');

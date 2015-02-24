@@ -25,5 +25,5 @@ module.exports = function() {
       'texteditor',
       'src/form/decorators/texteditor.html'
     );
-  }
+  };
 };

@@ -1,4 +1,4 @@
-module.exports = function(){
+module.exports = function() {
   'use strict';
 
   return {
@@ -13,8 +13,8 @@ module.exports = function(){
 
       if (date.isValid() === false) {
         throw new Error(
-            'Unable to convert date to locale timezone: ' +
-            dateString
+          'Unable to convert date to locale timezone: ' +
+          dateString
         );
       }
 
@@ -29,8 +29,8 @@ module.exports = function(){
       var date = moment.utc(dateString);
       if (date.isValid() === false) {
         throw new Error(
-            'Unable to convert date to UTC timezone: ' +
-            dateString
+          'Unable to convert date to UTC timezone: ' +
+          dateString
         );
       }
       if (date.hour() === 0 && date.minute() === 0) {

@@ -1,4 +1,6 @@
-module.exports = (function(){
+module.exports = (function() {
+  'use strict';
+
   angular.module('form-select', [
     'schemaForm',
     'form-decorators'

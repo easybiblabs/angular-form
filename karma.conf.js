@@ -17,7 +17,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'src/setup-karma.js',
-      'src/modules/**/*_spec.js'
+      'src/modules/**/*_spec.js',
+      'src/utility/**/*_spec.js'
     ],
 
 
@@ -30,7 +31,8 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'src/setup-karma.js': ['browserify'],
-      'src/modules/**/*_spec.js': ['browserify']
+      'src/modules/**/*_spec.js': ['browserify'],
+      'src/utility/**/*_spec.js': ['browserify']
     },
 
     browserify: {

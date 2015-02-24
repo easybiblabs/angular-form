@@ -7,7 +7,7 @@ describe('base constraint interface', function() {
 
   beforeEach(angular.mock.module('form-constraints'));
 
-  beforeEach(inject(function(_BaseConstraint_){
+  beforeEach(inject(function(_BaseConstraint_) {
     base = new _BaseConstraint_();
   }));
 
