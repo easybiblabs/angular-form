@@ -1,5 +1,4 @@
 require('./index');
-require('jquery');
 require('angular-translate');
 
 describe('constraintMerger', function() {

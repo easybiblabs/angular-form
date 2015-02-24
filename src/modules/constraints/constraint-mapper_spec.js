@@ -1,5 +1,4 @@
 require('./index');
-require('jquery');
 
 describe('constraint mapper service', function() {
   'use strict';
