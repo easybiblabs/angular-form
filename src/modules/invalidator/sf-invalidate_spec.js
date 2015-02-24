@@ -1,6 +1,5 @@
 require('./index');
 window.ObjectPath = require('objectpath');
-console.log(ObjectPath);
 require('angular-schema-form');
 
 

@@ -1,11 +1,12 @@
-require('./index');
-window.ObjectPath = require('objectpath');
 require('angular-schema-form');
 
+require('./index');
+require('./../decorators');
 
-describe('sfInvalidator', function() {
+describe.skip('sfInvalidator', function() {
   'use strict';
 
+  beforeEach(angular.mock.module('form-decorators'));
   beforeEach(angular.mock.module('form-invalidator'));
 
   var scope,
