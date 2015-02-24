@@ -4,7 +4,8 @@
   "description": "A module to provide angular form validation using json validator with the help of angular-schema-form. We have added some adjustments like * invalidate any formfield beside json validation to be able to display backend errors. * map doctrine backend validation to json schema validation ( enables to add constraints to entities in backend , and validate the form in javascript using the same constraints)",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "napa": "napa",
+    "install": "napa"
   },
   "repository": {
     "type": "git",
@@ -17,23 +18,91 @@
   },
   "homepage": "https://github.com/easybiblabs/angular-form",
   "devDependencies": {
+    "brfs": "1.4.0",
+    "browserify-shim": "3.8.2",
+    "gulp-eslint": "0.2.0",
+    "gulp-jscs": "^1.2.0",
     "karma-browserify": "2.0.0",
     "karma-mocha": "0.1.9",
     "karma-phantomjs-launcher": "0.1.4",
     "karma-sinon": "1.0.4",
     "karma-sinon-chai": "0.2.0",
-    "browserify-shim": "3.8.2"
+    "napa": "^1.2.0"
   },
   "dependencies": {
+    "bootstrap": "3.3.2",
     "angular": "1.3.13",
     "angular-mocks": "1.3.13",
     "angular-translate": "2.6.0",
     "jquery": "2.1.1",
-    "moment": "2.9.0"
+    "moment": "2.9.0",
+    "objectpath": "1.0.5",
+    "pickadate": "3.5.3",
+    "tv4": "1.1.9"
+  },
+  "napa": {
+    "angular-summernote": "summernote/angular-summernote#0.2.4",
+    "angular-schema-form": "textalk/angular-schema-form#v0.7.3"
+  },
+  "browser": {
+    "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
+    "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.js",
+    "pickadate/picker": "./node_modules/pickadate/lib/picker.js",
+    "pickadate/picker.date": "./node_modules/pickadate/lib/picker.date.js"
   },
   "browserify-shim": {
+    "pickadate/picker": {
+      "depends": [
+        "jquery"
+      ]
+    },
+    "pickadate/picker.date": {
+      "depends": [
+        "pickadate/picker"
+      ]
+    },
+    "jquery": {
+      "exports": "$"
+    },
+    "tv4": {
+      "exports": "tv4"
+    },
+    "pickadate": {
+      "depends": [
+        "jquery"
+      ]
+    },
     "angular": {
       "exports": "angular"
+    },
+    "objectpath": {
+      "exports": "ObjectPath"
+    },
+    "moment": {
+      "exports": "moment"
+    },
+    "bootstrap": {
+      "depends": [
+        "jquery"
+      ]
+    },
+    "summernote": {
+      "depends": [
+        "bootstrap",
+        "jquery"
+      ]
+    },
+    "angular-summernote": {
+      "depends": [
+        "angular",
+        "summernote"
+      ]
+    },
+    "angular-schema-form": {
+      "depends": [
+        "tv4",
+        "objectpath"
+      ]
     }
   }
 }
