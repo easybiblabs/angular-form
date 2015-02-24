@@ -14,6 +14,7 @@ module.exports = (function() {
     /*
      'ObjectPath',
      'schemaForm',*/
+    'pascalprecht.translate',
      'time'
 
   ])
@@ -24,5 +25,7 @@ module.exports = (function() {
     .factory('RegexConstraint', require('./regex'))
     .factory('NotBlankConstraint', require('./not-blank'))
     .factory('MatchPropertyConstraint', require('./match-property'))
-    .service('Mapper', require('./mapper'));
+    .service('Mapper', require('./mapper'))
+    .service('ConstraintMapper', require('./constraint-mapper'))
+    .service('ConstraintMerger', require('./constraint-merger'));
 })();
