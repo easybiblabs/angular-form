@@ -1,0 +1,29 @@
+<div class="form-group {{ form.containerStyle }}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false }">
+  <input ng-show="form.key"
+         sf-invalidate="{{ form.invalidate }}"
+         type="{{form.type}}"
+         name="{{ form.name }}"
+         sf-changed="form"
+         placeholder="{{form.placeholder}}"
+         class="form-control"
+         ng-required="form.required"
+         ng-model-options="form.ngModelOptions"
+         ng-model="$$value$$"
+         schema-validate="form"
+         disable-auto-size="{{!form.autoSize}}"
+         auto-size-input
+         ng-class="{filled: $$value$$.length}"
+         maxlength="{{ form.maxlength }}"
+         sf-attrs="{{form.attributes}}">
+  <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
+  <span ng-if="form.feedback !== false"
+        class="form-control-feedback"
+        ng-class="evalInScope(form.feedback) || {'glyphicon': true, 'glyphicon-ok': hasSuccess(), 'glyphicon-remove': hasError() }"></span>
+  <div class="help-block"
+       ng-show="(hasError() && errorMessage(schemaError())) || form.description"
+       ng-bind-html="(hasError() && errorMessage(schemaError())) || form.description"></div>
+  <div class="form-info-link"
+       ng-if="form.infoLink">
+    <a ui-sref="{{form.infoLink.route}}">{{form.infoLink.text | translate}}</a>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="form-group texteditor {{form.containerStyle}}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false }">
+    <summernote class="textarea" ng-class="{filled: $$value$$.length}" ng-model="$$value$$" config="form.options" sf-attrs="{{form.attributes}}"></summernote>
+
+    <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
+</div>
