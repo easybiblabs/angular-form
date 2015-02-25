@@ -1,6 +1,11 @@
-module.exports = function() {
+module.exports = (function() {
   'use strict';
 
+  /**
+   * @ngInject
+   * @param $rootScope
+   * @constructor
+   */
   var FormValidator = function($rootScope) {
     this.$rootScope = $rootScope;
     this.manuallyInvalidated = false;
@@ -44,4 +49,6 @@ module.exports = function() {
     this.manuallyInvalidated = true;
     this.$rootScope.$emit('schemaFormInvalidate', {items: items, value: true});
   };
-};
+
+  return FormValidator;
+})();

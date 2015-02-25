@@ -1,9 +1,10 @@
-require('angular-schema-form');
-
 require('./index');
 require('./../decorators');
 
-describe.skip('sfInvalidator', function() {
+require('angular-schema-form');
+require('angular-translate');
+
+describe('sfInvalidator', function() {
   'use strict';
 
   beforeEach(angular.mock.module('form-decorators'));
@@ -25,7 +26,7 @@ describe.skip('sfInvalidator', function() {
   beforeEach(inject(function(_$rootScope_, _$compile_) {
     var html = [
       '<form name="form" sf-invalidator ',
-      'sf-schema="sf.schema" sf-form="sf.form" sf-model="model" sf-decorator="scholarDecorator">',
+      'sf-schema="sf.schema" sf-form="sf.form" sf-model="model">',
       '</form>'
     ].join('');
 

@@ -1,6 +1,11 @@
-module.exports = function() {
+module.exports = (function() {
   'use strict';
 
+  /**
+   * @ngInject
+   * @returns {{restrict: string, require: string, link: Function}}
+   * @constructor
+   */
   function SfInvalidate() {
     return {
       restrict: 'A',
@@ -29,4 +34,4 @@ module.exports = function() {
   }
 
   return SfInvalidate;
-};
+})();
