@@ -54,8 +54,6 @@ describe('texteditor addon', function() {
         /* eslint-disable */
         tmpl.children().eq(0).children().eq(0).is('div').should.be.true;
         /* eslint-enable */
-        console.log(tmpl.children().eq(0).children().eq(0)
-          .find('.summernote').attr('ng-model'))
         tmpl.children().eq(0).children().eq(0)
           .find('.summernote').length.should.equal(1, 'is present');
         tmpl.children().eq(0).children().eq(0)

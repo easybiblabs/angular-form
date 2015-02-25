@@ -20,11 +20,13 @@
   "devDependencies": {
     "brfs": "1.4.0",
     "browserify": "9.0.3",
-    "browserify-shim": "3.8.2",
+    "browserify-shim": "3.8.3",
+    "chai": "2.1.0",
     "gulp": "3.8.11",
     "gulp-angular-templatecache": "1.5.0",
+    "gulp-concat": "2.5.2",
     "gulp-eslint": "0.2.0",
-    "gulp-jscs": "^1.2.0",
+    "gulp-jscs": "1.3.1",
     "gulp-minify-html": "1.0.0",
     "karma-browserify": "2.0.0",
     "karma-mocha": "0.1.9",
@@ -35,26 +37,27 @@
     "vinyl-source-stream": "1.0.0"
   },
   "dependencies": {
-    "angular": "1.3.13",
-    "angular-mocks": "1.3.13",
+    "angular": "1.3.0",
+    "angular-loading-bar": "0.6.*",
+    "angular-mocks": "1.3.0",
     "angular-translate": "2.6.0",
     "bootstrap": "3.3.2",
     "jquery": "2.1.1",
     "moment": "2.9.0",
-    "objectpath": "1.0.5",
+    "objectpath": "1.1.0",
     "pickadate": "3.5.3",
     "select2": "3.5.2-browserify",
     "summernote": "0.5.9",
-    "tv4": "1.1.9",
-    "angular-loading-bar": "0.6.*"
+    "tv4": "1.0.15"
   },
   "napa": {
     "angular-summernote": "summernote/angular-summernote#0.2.4",
     "angular-schema-form": "textalk/angular-schema-form#v0.7.3"
   },
   "browser": {
+    "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js",
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
-    "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.js",
+    "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.min.js",
     "pickadate/picker": "./node_modules/pickadate/lib/picker.js",
     "pickadate/picker.date": "./node_modules/pickadate/lib/picker.date.js",
     "summernote": "./node_modules/summernote/dist/summernote.js"
