@@ -1,14 +1,14 @@
 require('./index');
+require('../decorators');
+
 require('summernote');
 require('angular-summernote');
 require('angular-schema-form');
-require('../decorators');
 
 describe('texteditor addon', function() {
   'use strict';
 
   describe('directive', function() {
-    beforeEach(angular.mock.module('form-decorators'));
     beforeEach(angular.mock.module('form-texteditor'));
     beforeEach(
       // We don't need no sanitation. We don't need no though control.
@@ -44,7 +44,7 @@ describe('texteditor addon', function() {
         }];
 
         var tmpl = angular.element(
-          '<form sf-schema="schema" sf-form="form" sf-model="person" sf-decorator="scholarDecorator">' +
+          '<form sf-schema="schema" sf-form="form" sf-model="person">' +
           '</form>'
         );
 
@@ -54,19 +54,21 @@ describe('texteditor addon', function() {
         /* eslint-disable */
         tmpl.children().eq(0).children().eq(0).is('div').should.be.true;
         /* eslint-enable */
+        console.log(tmpl.children().eq(0).children().eq(0)
+          .find('.summernote').attr('ng-model'))
         tmpl.children().eq(0).children().eq(0)
           .find('.summernote').length.should.equal(1, 'is present');
         tmpl.children().eq(0).children().eq(0)
           .find('.summernote').attr('ng-model')
-          .should.equal('model.desc');
+          .should.equal('model[\'desc\']');
         tmpl.find('.note-style').length
-          .should.equal(1);
+          .should.equal(1, 'has note-style feature');
         tmpl.find('.note-style').children().length
           .should.equal(2);
         tmpl.find('.note-style').find('[data-event=bold]').length
-          .should.equal(1);
+          .should.equal(1, 'has bold feature');
         tmpl.find('.note-style').find('[data-event=italic]').length
-          .should.equal(1);
+          .should.equal(1, 'has italic feature');
       });
     });
   });

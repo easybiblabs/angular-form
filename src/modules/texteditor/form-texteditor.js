@@ -1,6 +1,9 @@
-module.exports = function() {
+module.exports = (function() {
   'use strict';
 
+  /**
+   * @ngInject
+   */
   return function(schemaFormProvider, schemaFormDecoratorsProvider, sfPathProvider) {
 
     var texteditor = function(name, schema, options) {
@@ -26,4 +29,4 @@ module.exports = function() {
       'src/form/decorators/texteditor.html'
     );
   };
-};
+})();
