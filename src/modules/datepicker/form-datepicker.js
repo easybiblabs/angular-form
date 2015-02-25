@@ -1,6 +1,13 @@
-module.exports = function() {
+module.exports = (function() {
   'use strict';
 
+  /**
+   * @ngInject
+   * @param schemaFormProvider
+   * @param schemaFormDecoratorsProvider
+   * @param sfPathProvider
+   * @constructor
+   */
   function Datepicker(schemaFormProvider, schemaFormDecoratorsProvider, sfPathProvider) {
 
     var datepicker = function(name, schema, options) {
@@ -28,4 +35,4 @@ module.exports = function() {
   }
 
   return Datepicker;
-};
+})();

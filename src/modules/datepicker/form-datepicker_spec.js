@@ -1,6 +1,9 @@
 require('./index');
+require('../decorators');
+
 var moment = require('moment');
 
+require('bootstrap');
 require('pickadate/picker');
 require('pickadate/picker.date');
 require('angular-schema-form');
@@ -38,7 +41,7 @@ describe('datepicker addon', function() {
         }];
 
         var template = angular.element(
-          '<form sf-schema="schema" sf-form="form" sf-model="person" sf-decorator="bootstrapDecorator">' +
+          '<form sf-schema="schema" sf-form="form" sf-model="person">' +
           '</form>'
         );
 
