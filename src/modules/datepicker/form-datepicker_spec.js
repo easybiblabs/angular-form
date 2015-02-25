@@ -5,7 +5,7 @@ require('pickadate/picker');
 require('pickadate/picker.date');
 require('angular-schema-form');
 
-describe.skip('datepicker addon', function() {
+describe('datepicker addon', function() {
   'use strict';
 
   describe('directive', function() {

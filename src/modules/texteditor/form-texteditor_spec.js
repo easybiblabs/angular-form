@@ -4,7 +4,7 @@ require('angular-summernote');
 require('angular-schema-form');
 require('../decorators');
 
-describe.skip('texteditor addon', function() {
+describe('texteditor addon', function() {
   'use strict';
 
   describe('directive', function() {
