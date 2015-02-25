@@ -9,7 +9,6 @@ module.exports = (function() {
     return {
       restrict: 'A',
       link: function(scope, element, attr) {
-        console.log(attr)
         $rootScope.$on('schemaFormInvalidate', function(event, data) {
 
           var form = scope.$eval(attr.sfForm);
