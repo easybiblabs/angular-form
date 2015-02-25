@@ -10,4 +10,19 @@ module.exports = (function() {
   //
   // so we make it supported.
 
+  angular.module('form-constraints', [
+    'pascalprecht.translate',
+    'time'
+
+  ])
+    .factory('BaseConstraint', require('./base'))
+    .factory('ChoiceConstraint', require('./choice'))
+    .factory('DateRangeConstraint', require('./date-range'))
+    .factory('LengthConstraint', require('./length'))
+    .factory('RegexConstraint', require('./regex'))
+    .factory('NotBlankConstraint', require('./not-blank'))
+    .factory('MatchPropertyConstraint', require('./match-property'))
+    .service('Mapper', require('./mapper'))
+    .service('ConstraintMapper', require('./constraint-mapper'))
+    .service('ConstraintMerger', require('./constraint-merger'));
 })();

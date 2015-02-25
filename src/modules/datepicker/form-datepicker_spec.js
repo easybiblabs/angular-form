@@ -3,6 +3,7 @@ require('../decorators');
 
 var moment = require('moment');
 
+require('bootstrap');
 require('pickadate/picker');
 require('pickadate/picker.date');
 require('angular-schema-form');
