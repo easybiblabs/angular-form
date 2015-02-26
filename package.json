@@ -7,6 +7,7 @@
     "napa": "napa",
     "install": "napa"
   },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/easybiblabs/angular-form.git"
