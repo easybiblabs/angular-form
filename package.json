@@ -57,10 +57,13 @@
   "browser": {
     "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js",
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
-    "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.min.js",
+    "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.js",
     "pickadate/picker": "./node_modules/pickadate/lib/picker.js",
     "pickadate/picker.date": "./node_modules/pickadate/lib/picker.date.js",
     "summernote": "./node_modules/summernote/dist/summernote.js"
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
   },
   "browserify-shim": {
     "pickadate/picker": {
