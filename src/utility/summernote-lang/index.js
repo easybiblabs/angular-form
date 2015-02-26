@@ -1,3 +1,6 @@
+require('jquery');
+require('summernote');
+
 module.exports = (function() {
   'use strict';
 
