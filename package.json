@@ -66,26 +66,11 @@
     "transform": [ "browserify-shim" ]
   },
   "browserify-shim": {
-    "pickadate/picker": {
-      "depends": [
-        "jquery"
-      ]
-    },
-    "pickadate/picker.date": {
-      "depends": [
-        "pickadate/picker"
-      ]
-    },
     "jquery": {
       "exports": "$"
     },
     "tv4": {
       "exports": "tv4"
-    },
-    "pickadate": {
-      "depends": [
-        "jquery"
-      ]
     },
     "angular": {
       "exports": "angular"
