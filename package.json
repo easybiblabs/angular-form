@@ -84,16 +84,14 @@
     "moment": {
       "exports": "moment"
     },
-    "bootstrap": {
-      "depends": [
-        "jquery"
-      ]
-    },
     "summernote": {
       "depends": [
         "bootstrap",
         "jquery"
       ]
+    },
+    "tv4": {
+      "exports": "tv4"
     },
     "angular-summernote": {
       "depends": [
