@@ -57,7 +57,6 @@
     "angular-summernote": "summernote/angular-summernote#0.2.4"
   },
   "browser": {
-    "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js",
     "ngSanitize": "./node_modules/angular-sanitize/angular-sanitize.js",
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
     "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.min.js",
