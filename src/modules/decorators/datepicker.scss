@@ -1,0 +1,236 @@
+/* ****************************************************************************
+   STYLE
+   ----------------------------------------------------------------------------
+   @name:         app/form/decorators/datepicker.scss
+   @author:       Imagine Easy Solutions
+   @note:         SCSS file for the datepicker component
+
+ =========================================================================== */
+
+.datepicker {
+  input {
+    padding-right: $form-control-feedback-width * 2 !important;
+
+    &:focus ~ .ghost-label {
+      @include color-animation($default-animation-speed, $color-easing, $default-animation-speed);
+      opacity: 1;
+    }
+
+    &.editable-filled ~ .ghost-label,
+    &.filled ~ .ghost-label {
+      opacity: 0;
+      @include transition(none);
+    }
+  }
+
+  .ghost-label {
+    position: absolute;
+    top: $placeholder-line-height;
+    left: 0;
+    padding: $input-padding 0;
+    color: gray(4);
+    font-weight: 600;
+    line-height: $input-line-height;
+    font-size: $input-font-size;
+    display: block;
+    height: $input-line-height;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .calendar-icon {
+    @include icon('calendar');
+    @include color-animation();
+    position: absolute;
+    top: $placeholder-line-height;
+    right: 0;
+    width: $form-control-feedback-width;
+    font-size: 1.25rem;
+    text-align: center;
+    height: $input-padding * 2 + $input-line-height;
+    display: table;
+    z-index: 2;
+    cursor: pointer;
+    color: color('orange');
+
+    &::before {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      color: color('orange', 'dark');
+    }
+  }
+
+  .filled,
+  .ng-dirty,
+  input:focus {
+    ~ label::before {
+      opacity: 1;
+      @include transition-property (opacity);
+      @include transition-duration($default-animation-speed - .1s);
+      @include transition-timing-function($color-easing);
+      @include transition-delay($default-animation-speed + .1s);
+    }
+  }
+
+  .form-control-feedback {
+    right: $form-control-feedback-width;
+  }
+}
+
+// Pickadate overwrites
+// scss-lint:disable SelectorFormat
+$calendar-border-color: darken(color('purple', 'dark'), 17%);
+
+.picker {
+  position: relative;
+}
+
+.picker__holder {
+  width: 230px;
+  margin-top: $placeholder-line-height + $input-padding * 2 + $input-line-height;
+  border: 0;
+  background: gray(2);
+  color: $default-light-font-color;
+  left: 50%;
+  margin-left: -115px;
+  border-radius: $default-border-radius;
+
+  .picker--opened & {
+    @include box-shadow(none);
+    overflow: visible;
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    content: ' ';
+    top: -10px;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid gray(2);
+  }
+}
+
+.picker__box {
+  padding: 0;
+  border-radius: $default-border-radius;
+  overflow: hidden;
+}
+
+.picker__header {
+  margin-top: 0;
+  padding-top: $placeholder-line-height;
+  height: 2.5rem;
+}
+
+.picker__nav--next,
+.picker__nav--prev {
+  @include box-sizing(border-box);
+  @include color-animation();
+  border: 0;
+  padding: .9rem;
+  top: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: block;
+  text-align: center;
+
+  &:not(.picker__nav--disabled):hover {
+    background: transparent;
+    color: color('orange');
+  }
+
+  &.picker__nav--disabled {
+    color: rgba($default-light-font-color, .4);
+  }
+
+  &:before {
+    border: 0;
+    width: auto;
+  }
+}
+
+.picker__frame {
+  .picker__nav--next {
+    @include icon('chevron-right');
+    right: 0;
+    border-left: 1px solid $calendar-border-color;
+  }
+
+  .picker__nav--prev {
+    @include icon('chevron-left');
+    left: 0;
+    border-right: 1px solid $calendar-border-color;
+  }
+}
+
+.picker__month,
+.picker__year {
+  color: $default-light-font-color;
+  font-style: normal;
+  font-size: 1rem;
+}
+
+.picker__table {
+  margin-bottom: 0;
+  margin-top: 0;
+  background: color('purple');
+  border-top: 1px solid $calendar-border-color;
+
+  thead {
+    background: gray(2);
+  }
+}
+
+.picker__weekday {
+  color: $default-light-font-color;
+  padding: .25rem 0;
+}
+
+.picker__day {
+  @include color-animation();
+  color: $default-light-font-color;
+  border: 0;
+}
+
+.picker__day--infocus,
+.picker__day--outfocus {
+  &:hover {
+    background: color('purple', 'light');
+  }
+}
+
+.picker__day--today:before {
+  border: 0;
+}
+
+.picker__day--selected {
+
+  &,
+  &:hover,
+  .picker--focused & {
+    background: color('blue');
+  }
+}
+
+.picker__day--disabled {
+  &,
+  &.picker__day--highlighted,
+  &.picker__day--highlighted:hover,
+  &:hover,
+  .picker--focused & {
+    background-color: color('purple', 'dark');
+    color: rgba(gray(7), .6);
+  }
+}
+
+.picker__footer {
+  display: none;
+}
