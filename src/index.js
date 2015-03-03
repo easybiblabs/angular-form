@@ -1,3 +1,7 @@
+window.jQuery = window.$ = require('jquery');
+require('angular-schema-form');
+require('angular-summernote');
+
 require('./modules/sf-attrs');
 require('./modules/datepicker');
 require('./modules/decorators');

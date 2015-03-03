@@ -65,7 +65,9 @@
     "summernote": "./node_modules/summernote/dist/summernote.js"
   },
   "browserify": {
-    "transform": [ "browserify-shim" ]
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "browserify-shim": {
     "jquery": {
@@ -77,20 +79,28 @@
     "angular": {
       "exports": "angular"
     },
+    "angular-schema-form": {
+      "depends": [
+        "moment",
+        "objectpath:ObjectPath",
+        "tv4:tv4"
+      ]
+    },
     "objectpath": {
-      "exports": "ObjectPath"
+      "exports": "global:ObjectPath"
     },
     "moment": {
       "exports": "moment"
     },
+    "./utility/summernote-lang": {
+      "depends": "summernote:$"
+    },
     "summernote": {
       "depends": [
         "bootstrap",
-        "jquery"
+        "jquery:$",
+        "angular-summernote"
       ]
-    },
-    "tv4": {
-      "exports": "tv4"
     },
     "angular-summernote": {
       "depends": [
