@@ -82,12 +82,12 @@
     "angular-schema-form": {
       "depends": [
         "moment",
-        "objectpath",
-        "tv4"
+        "objectpath:ObjectPath",
+        "tv4:tv4"
       ]
     },
     "objectpath": {
-      "exports": "ObjectPath"
+      "exports": "global:ObjectPath"
     },
     "moment": {
       "exports": "moment"
