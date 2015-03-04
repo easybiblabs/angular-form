@@ -1,4 +1,3 @@
-window.jQuery = window.$ = require('jquery');
 require('angular-schema-form');
 require('angular-summernote');
 
