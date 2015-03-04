@@ -102,6 +102,11 @@
         "angular-summernote"
       ]
     },
+    "bootstrap": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    },
     "angular-summernote": {
       "depends": [
         "angular",
