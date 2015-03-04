@@ -87,7 +87,7 @@
       ]
     },
     "objectpath": {
-      "exports": "ObjectPath"
+      "exports": "global:ObjectPath"
     },
     "moment": {
       "exports": "moment"
