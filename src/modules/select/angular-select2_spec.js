@@ -58,7 +58,7 @@ describe('angular select2', function() {
     view.find('select').select2.should.be.a('function');
   });
 
-  it('should know when select is changed', function() {
+  it.skip('should know when select is changed', function() {
     var choices = ['foo', 'bar', 'baz'];
     var index = 1;
     testPicker(choices);
