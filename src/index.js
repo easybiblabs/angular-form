@@ -1,7 +1,7 @@
 window.jQuery = window.$ = require('jquery');
+require('ngSanitize');
 require('angular-schema-form');
 require('angular-summernote');
-require('ngSanitize');
 
 require('./modules/sf-attrs');
 require('./modules/datepicker');
