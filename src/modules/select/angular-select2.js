@@ -24,7 +24,9 @@ module.exports = function($timeout) {
 
       $timeout(function() {
         $(element).select2(config).on('change', function(e) {
-          ngModel.$setViewValue(e.added.text);
+          if (e.added) {
+            ngModel.$setViewValue(e.added.text);
+          }
         });
       }, 0);
 
