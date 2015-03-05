@@ -9,6 +9,9 @@ module.exports = function($timeout) {
     },
     link: function(scope, element, attr, ngModel) {
 
+      // ensure jquery element
+      element = $(element);
+
       var evalInParentScope = function(value) {
         return scope.$parent.$eval(value);
       };
