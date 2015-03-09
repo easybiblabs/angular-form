@@ -25,7 +25,13 @@ module.exports = function($timeout) {
       $timeout(function() {
         $(element).select2(config).on('change', function(e) {
           if (e.added) {
-            ngModel.$setViewValue(e.added.text);
+            if (isNaN(parseInt(e.added.id))) {
+              // non-numerical id (option value) -> use that
+              ngModel.$setViewValue(e.added.id);
+            } else {
+              // numerical id (option value) -> use the option label
+              ngModel.$setViewValue(e.added.text);
+            }
           }
         });
       }, 0);
