@@ -25,7 +25,7 @@ module.exports = function($timeout) {
       $timeout(function() {
         $(element).select2(config).on('change', function(e) {
           if (e.added) {
-            if (isNaN(parseInt(e.added.id))) {
+            if (isNaN(parseInt(e.added.id, 10))) {
               // non-numerical id (option value) -> use that
               ngModel.$setViewValue(e.added.id);
             } else {
