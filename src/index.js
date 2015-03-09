@@ -26,6 +26,7 @@ module.exports = (function(){
     'form-invalidator',
     'form-texteditor',
     'form-decorators',
-    'form-datepicker'
+    'form-datepicker',
+    'sf-attrs'
   ]);
 })();
