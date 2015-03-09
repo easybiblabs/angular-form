@@ -23,11 +23,7 @@ module.exports = function($timeout) {
       }
 
       $timeout(function() {
-        $(element).select2(config).on('change', function(e) {
-          if (e.added) {
-            ngModel.$setViewValue(e.added.text);
-          }
-        });
+        $(element).select2(config);
       }, 0);
 
       ngModel.$parsers.unshift(function(value) {
