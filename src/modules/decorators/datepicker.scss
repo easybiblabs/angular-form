@@ -132,8 +132,8 @@ $calendar-border-color: darken(color('purple', 'dark'), 17%);
 
 .picker__nav--next,
 .picker__nav--prev {
-  @include box-sizing(border-box);
   @include color-animation();
+  box-sizing: border-box;
   border: 0;
   padding: .9rem;
   top: 0;
