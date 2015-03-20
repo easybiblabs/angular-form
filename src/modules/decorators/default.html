@@ -1,5 +1,4 @@
 <div class="form-group {{ form.containerStyle }}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false }">
-  <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
   <input ng-show="form.key"
          sf-invalidate="{{ form.invalidate }}"
          type="{{form.type}}"
@@ -15,6 +14,7 @@
          auto-size-input
          maxlength="{{ form.maxlength }}"
          sf-attrs="{{form.attributes}}">
+  <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
   <span ng-if="form.feedback !== false"
         class="form-control-feedback"
         ng-class="evalInScope(form.feedback) || { 'input-valid': hasSuccess(), 'input-invalid': hasError() }"></span>

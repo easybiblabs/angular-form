@@ -1,9 +1,5 @@
 <div class="form-group datepicker {{ form.containerStyle }}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false }">
 
-  <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
-
-  <label class="ghost-label" translate="application.date.format"></label>
-
   <input class="datepicker_input form-control"
          style="display: none;"
          ng-show="form.key"
@@ -19,6 +15,10 @@
          name="{{ form.name }}"
          ng-required="form.required"
          sf-attrs="{{ form.attributes }}" />
+
+  <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
+
+  <label class="ghost-label" translate="application.date.format"></label>
 
   <i class="calendar-icon"></i>
 
