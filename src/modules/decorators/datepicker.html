@@ -8,14 +8,12 @@
            schema-validate="form"
            ng-model="$$value$$"
            pick-a-date
-           ng-class="{filled: $$value$$.length}"
            format="form.format"
            min-date="form.minDate"
            max-date="form.maxDate" />
     <input class="datepicker_editable_input form-control"
            name="{{ form.name }}"
            ng-required="form.required"
-           ng-class="{filled: $$value$$.length}"
            sf-attrs="{{ form.attributes }}" />
 
     <label class="control-label" ng-show="showTitle()">{{form.title}}</label>

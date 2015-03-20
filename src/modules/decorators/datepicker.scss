@@ -16,8 +16,7 @@
       opacity: 1;
     }
 
-    &.editable-filled ~ .ghost-label,
-    &.filled ~ .ghost-label {
+    &.editable-filled ~ .ghost-label {
       opacity: 0;
       @include transition(none);
     }
@@ -63,7 +62,6 @@
     }
   }
 
-  .filled,
   .ng-dirty,
   input:focus {
     ~ label::before {

@@ -133,15 +133,6 @@
     }
   }
 
-  .select2-chosen {
-    opacity: 0;
-    @include color-animation($default-animation-speed, $color-easing, $default-animation-speed)
-  }
-
-  &.filled .select2-chosen {
-    opacity: 1;
-  }
-
 }
 
 .select2-drop-mask {
