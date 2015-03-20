@@ -1,31 +1,31 @@
 <div class="form-group datepicker {{ form.containerStyle }}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false }">
 
-    <input class="datepicker_input form-control"
-           style="display: none;"
-           ng-show="form.key"
-           class="form-control"
-           ng-required="form.required"
-           schema-validate="form"
-           ng-model="$$value$$"
-           pick-a-date
-           format="form.format"
-           min-date="form.minDate"
-           max-date="form.maxDate" />
-    <input class="datepicker_editable_input form-control"
-           name="{{ form.name }}"
-           ng-required="form.required"
-           sf-attrs="{{ form.attributes }}" />
+  <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
 
-    <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
+  <label class="ghost-label" translate="application.date.format"></label>
 
-    <label class="ghost-label" translate="application.date.format"></label>
+  <input class="datepicker_input form-control"
+         style="display: none;"
+         ng-show="form.key"
+         class="form-control"
+         ng-required="form.required"
+         schema-validate="form"
+         ng-model="$$value$$"
+         pick-a-date
+         format="form.format"
+         min-date="form.minDate"
+         max-date="form.maxDate" />
+  <input class="datepicker_editable_input form-control"
+         name="{{ form.name }}"
+         ng-required="form.required"
+         sf-attrs="{{ form.attributes }}" />
 
-    <i class="calendar-icon"></i>
+  <i class="calendar-icon"></i>
 
-    <span ng-if="form.feedback !== false"
-          class="form-control-feedback"
-          ng-class="evalInScope(form.feedback) || {'glyphicon': true, 'glyphicon-ok': hasSuccess(), 'glyphicon-remove': hasError() }"></span>
-    <div class="help-block"
-         ng-show="(hasError() && errorMessage(schemaError())) || form.description"
-         ng-bind-html="(hasError() && errorMessage(schemaError())) || form.description"></div>
+  <span ng-if="form.feedback !== false"
+        class="form-control-feedback"
+        ng-class="evalInScope(form.feedback) || {'glyphicon': true, 'glyphicon-ok': hasSuccess(), 'glyphicon-remove': hasError() }"></span>
+  <div class="help-block"
+       ng-show="(hasError() && errorMessage(schemaError())) || form.description"
+       ng-bind-html="(hasError() && errorMessage(schemaError())) || form.description"></div>
 </div>
