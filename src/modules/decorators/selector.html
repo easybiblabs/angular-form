@@ -8,13 +8,14 @@
           select-two
           config="form.config"
           ng-required="form.required"
+          placeholder="{{form.placeholder}}"
           ng-options="option.value as option.name for option in form.titleMap">
     <option></option>
   </select>
   <span ng-if="form.feedback !== false"
         class="form-control-feedback"
         ng-class="evalInScope(form.feedback) || {'glyphicon': true, 'glyphicon-ok': hasSuccess(), 'glyphicon-remove': hasError() }"></span>
-  <div class="help-block"
-       ng-show="(hasError() && errorMessage(schemaError())) || form.description"
-       ng-bind-html="(hasError() && errorMessage(schemaError())) || form.description"></div>
+  <div class="error-message"
+       ng-show="(hasError() && errorMessage(schemaError()))"
+       ng-bind-html="(hasError() && errorMessage(schemaError()))"></div>
 </div>
