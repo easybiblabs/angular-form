@@ -9,7 +9,7 @@
   <!-- disabled until we unbreak the css
     <span ng-if="form.feedback !== false"
         class="form-control-feedback"
-        ng-class="evalInScope(form.feedback) || { 'input-valid': hasSuccess(), 'input-invalid': hasError() }"></span>
+        ng-class="evalInScope(form.feedback)"></span>
   -->
   <span class="error-message" ng-bind="(hasError() && errorMessage(schemaError()))"</span>
 </div>

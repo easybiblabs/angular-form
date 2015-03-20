@@ -14,7 +14,7 @@
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
   <span ng-if="form.feedback !== false"
         class="form-control-feedback"
-        ng-class="evalInScope(form.feedback) || { 'input-valid': hasSuccess(), 'input-invalid': hasError() }"></span>
+        ng-class="evalInScope(form.feedback)"></span>
   <div class="error-message"
        ng-show="(hasError() && errorMessage(schemaError()))"
        ng-bind-html="(hasError() && errorMessage(schemaError()))"></div>
