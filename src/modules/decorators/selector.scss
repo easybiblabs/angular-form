@@ -21,12 +21,12 @@
 
   .select2-choice {
     display: block;
-    height: $form-input-height + rem(1); // For the bottom border
-    padding: $input-padding 0;
+    height: $form-control-height + rem(1); // For the bottom border
+    padding: $form-control-padding 0;
     overflow: hidden;
     position: relative;
     white-space: nowrap;
-    line-height: $input-line-height;
+    line-height: $form-control-line-height;
     text-decoration: none;
     color: $default-dark-font-color;
     margin-bottom: -1px;
@@ -185,7 +185,7 @@
   // display: inline-block;
   display: none;
   width: 100%;
-  min-height: $form-input-height;
+  min-height: $form-control-height;
   margin: 0;
   padding: 4px;
 
@@ -197,9 +197,9 @@
   input {
     width: 100%;
     height: auto !important;
-    min-height: $form-input-height;
+    min-height: $form-control-height;
     margin: 0;
-    padding: $input-padding;
+    padding: $form-control-padding;
     outline: 0;
     font-size: 1rem;
 
@@ -390,7 +390,7 @@
     height: auto !important;
     height: 1%;
     // scss-lint:enable DuplicateProperty
-    min-height: $form-input-height;
+    min-height: $form-control-height;
     margin: 0;
     padding: 0 5px 0 0;
     position: relative;

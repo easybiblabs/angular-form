@@ -507,7 +507,7 @@
   .control-label {
     // See button padding and .ta-editor padding
     @include color-animation();
-    top: .5rem * 2 + .5rem + $default-button-line-height + $placeholder-line-height;
+    top: .5rem * 2 + .5rem + $default-button-line-height + $control-label-line-height;
     font-weight: 600;
     color: gray(4);
 

@@ -24,15 +24,15 @@
 
   .ghost-label {
     position: absolute;
-    top: $placeholder-line-height;
+    top: $control-label-line-height;
     left: 0;
-    padding: $input-padding 0;
+    padding: $form-control-padding-y 0;
     color: gray(4);
     font-weight: 600;
-    line-height: $input-line-height;
-    font-size: $input-font-size;
+    line-height: $form-control-line-height;
+    font-size: $form-control-font-size;
     display: block;
-    height: $input-line-height;
+    height: $form-control-line-height;
     z-index: -1;
     opacity: 0;
   }
@@ -41,12 +41,12 @@
     @include icon('calendar');
     @include color-animation();
     position: absolute;
-    top: $placeholder-line-height;
+    top: $control-label-line-height;
     right: 0;
     width: $form-control-feedback-width;
     font-size: 1.25rem;
     text-align: center;
-    height: $input-padding * 2 + $input-line-height;
+    height: $form-control-padding-y * 2 + $form-control-line-height;
     display: table;
     z-index: 2;
     cursor: pointer;
@@ -88,7 +88,7 @@ $calendar-border-color: darken(color('purple', 'dark'), 17%);
 
 .picker__holder {
   width: 230px;
-  margin-top: $placeholder-line-height + $input-padding * 2 + $input-line-height;
+  margin-top: $control-label-line-height + $form-control-padding-y * 2 + $form-control-line-height;
   border: 0;
   background: gray(2);
   color: $default-light-font-color;
@@ -124,7 +124,7 @@ $calendar-border-color: darken(color('purple', 'dark'), 17%);
 
 .picker__header {
   margin-top: 0;
-  padding-top: $placeholder-line-height;
+  padding-top: $control-label-line-height;
   height: 2.5rem;
 }
 
