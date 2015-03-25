@@ -10,31 +10,6 @@
 .datepicker {
   input {
     padding-right: $form-control-feedback-width * 2 !important;
-
-    &:focus ~ .ghost-label {
-      @include color-animation($default-animation-speed, $color-easing, $default-animation-speed);
-      opacity: 1;
-    }
-
-    &.editable-filled ~ .ghost-label {
-      opacity: 0;
-      @include transition(none);
-    }
-  }
-
-  .ghost-label {
-    position: absolute;
-    top: $control-label-line-height;
-    left: 0;
-    padding: $form-control-padding-y 0;
-    color: gray(4);
-    font-weight: 600;
-    line-height: $form-control-line-height;
-    font-size: $form-control-font-size;
-    display: block;
-    height: $form-control-line-height;
-    z-index: -1;
-    opacity: 0;
   }
 
   .calendar-icon {
