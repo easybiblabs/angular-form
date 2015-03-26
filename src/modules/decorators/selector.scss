@@ -21,7 +21,7 @@
 
   .select2-choice {
     display: block;
-    height: $form-control-height + rem(1); // For the bottom border
+    height: $form-control-height;
     padding: $form-control-padding 0;
     overflow: hidden;
     position: relative;
