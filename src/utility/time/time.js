@@ -9,7 +9,7 @@ module.exports = function() {
      */
     getLocaleString: function(dateString, timezone) {
       var date = moment(dateString);
-      date.zone(timezone);
+      date.utcOffset(timezone);
 
       if (date.isValid() === false) {
         throw new Error(
