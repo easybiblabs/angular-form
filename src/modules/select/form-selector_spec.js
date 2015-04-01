@@ -8,6 +8,12 @@ describe('select2 addon', function() {
   describe('directive', function() {
 
     beforeEach(angular.mock.module('form-select'));
+    beforeEach(
+      // We don't need no sanitation. We don't need no though control.
+      angular.mock.module(function($sceProvider) {
+        $sceProvider.enabled(false);
+      })
+    );
 
     it('should use the select-two directive when the format is "select"', function() {
 

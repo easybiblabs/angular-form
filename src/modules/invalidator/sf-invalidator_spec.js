@@ -9,6 +9,12 @@ describe('sfInvalidator', function() {
 
   beforeEach(angular.mock.module('form-decorators'));
   beforeEach(angular.mock.module('form-invalidator'));
+  beforeEach(
+    // We don't need no sanitation. We don't need no though control.
+    angular.mock.module(function($sceProvider) {
+      $sceProvider.enabled(false);
+    })
+  );
 
   var scope,
     formScope,
