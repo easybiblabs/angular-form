@@ -9,7 +9,7 @@ module.exports = function($timeout) {
   var formatDate = function(value) {
     // Strings or timestamps we make a date of
     if (angular.isString(value) || angular.isNumber(value)) {
-      return new Date(value.replace(/-/g, '/'));
+      return moment(value).toDate();
     }
     return value; // We hope it's a date object
   };
