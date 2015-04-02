@@ -10,44 +10,18 @@
 .datepicker {
   input {
     padding-right: $form-control-feedback-width * 2 !important;
-
-    &:focus ~ .ghost-label {
-      @include color-animation($default-animation-speed, $color-easing, $default-animation-speed);
-      opacity: 1;
-    }
-
-    &.editable-filled ~ .ghost-label,
-    &.filled ~ .ghost-label {
-      opacity: 0;
-      @include transition(none);
-    }
-  }
-
-  .ghost-label {
-    position: absolute;
-    top: $placeholder-line-height;
-    left: 0;
-    padding: $input-padding 0;
-    color: gray(4);
-    font-weight: 600;
-    line-height: $input-line-height;
-    font-size: $input-font-size;
-    display: block;
-    height: $input-line-height;
-    z-index: -1;
-    opacity: 0;
   }
 
   .calendar-icon {
     @include icon('calendar');
     @include color-animation();
     position: absolute;
-    top: $placeholder-line-height;
+    top: $control-label-line-height;
     right: 0;
     width: $form-control-feedback-width;
     font-size: 1.25rem;
     text-align: center;
-    height: $input-padding * 2 + $input-line-height;
+    height: $form-control-padding-y * 2 + $form-control-line-height;
     display: table;
     z-index: 2;
     cursor: pointer;
@@ -63,7 +37,6 @@
     }
   }
 
-  .filled,
   .ng-dirty,
   input:focus {
     ~ label::before {
@@ -89,32 +62,20 @@ $calendar-border-color: darken(color('purple', 'dark'), 17%);
 }
 
 .picker__holder {
-  width: 230px;
-  margin-top: $placeholder-line-height + $input-padding * 2 + $input-line-height;
+  $picker-width: 230px;
+  width: $picker-width;
+  margin-top: $control-label-line-height + $form-control-padding-y * 2 + $form-control-line-height;
   border: 0;
   background: gray(2);
   color: $default-light-font-color;
-  left: 50%;
-  margin-left: -115px;
+  right: $form-control-feedback-width/2;
+  margin-right: -$picker-width/2;
   border-radius: $default-border-radius;
+  @include carat('up', 20px, 50%, gray(2));
 
   .picker--opened & {
     @include box-shadow(none);
     overflow: visible;
-  }
-
-  &::before {
-    display: block;
-    position: absolute;
-    content: ' ';
-    top: -10px;
-    left: 50%;
-    margin-left: -5px;
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid gray(2);
   }
 }
 
@@ -126,7 +87,7 @@ $calendar-border-color: darken(color('purple', 'dark'), 17%);
 
 .picker__header {
   margin-top: 0;
-  padding-top: $placeholder-line-height;
+  padding-top: $control-label-line-height;
   height: 2.5rem;
 }
 
@@ -192,6 +153,7 @@ $calendar-border-color: darken(color('purple', 'dark'), 17%);
 .picker__weekday {
   color: $default-light-font-color;
   padding: .25rem 0;
+  text-align: center;
 }
 
 .picker__day {

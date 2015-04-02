@@ -13,7 +13,24 @@ describe('datepicker addon', function() {
 
   describe('directive', function() {
 
+    var mockTranslateFilter;
+
     beforeEach(angular.mock.module('form-datepicker'));
+    beforeEach(
+      // We don't need no sanitation. We don't need no though control.
+      angular.mock.module(function($sceProvider) {
+        $sceProvider.enabled(false);
+      })
+    );
+    beforeEach(function() {
+      angular.mock.module(function($provide) {
+        $provide.value('translateFilter', mockTranslateFilter);
+      });
+
+      mockTranslateFilter = function(value) {
+        return value;
+      };
+    });
 
     it('should use the datepicker directive when the format is "date"', function() {
 

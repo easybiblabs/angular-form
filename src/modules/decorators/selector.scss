@@ -14,6 +14,7 @@
   position: relative;
   display: inline-block;
   padding: 0;
+  height: $form-control-height;
 
   ~ .form-control-feedback {
     right: $form-control-feedback-width;
@@ -21,12 +22,12 @@
 
   .select2-choice {
     display: block;
-    height: $form-input-height + rem(1); // For the bottom border
-    padding: $input-padding 0;
+    padding: $form-control-padding 0;
     overflow: hidden;
+    height: 100%;
     position: relative;
     white-space: nowrap;
-    line-height: $input-line-height;
+    line-height: $form-control-line-height;
     text-decoration: none;
     color: $default-dark-font-color;
     margin-bottom: -1px;
@@ -39,7 +40,7 @@
       margin-right: $form-control-feedback-width * 2;
       display: block;
       overflow: hidden;
-
+      opacity: 1;
       white-space: nowrap;
 
       text-overflow: ellipsis;
@@ -133,15 +134,6 @@
     }
   }
 
-  .select2-chosen {
-    opacity: 0;
-    @include color-animation($default-animation-speed, $color-easing, $default-animation-speed)
-  }
-
-  &.filled .select2-chosen {
-    opacity: 1;
-  }
-
 }
 
 .select2-drop-mask {
@@ -194,7 +186,7 @@
   // display: inline-block;
   display: none;
   width: 100%;
-  min-height: $form-input-height;
+  min-height: $form-control-height;
   margin: 0;
   padding: 4px;
 
@@ -206,9 +198,9 @@
   input {
     width: 100%;
     height: auto !important;
-    min-height: $form-input-height;
+    min-height: $form-control-height;
     margin: 0;
-    padding: $input-padding;
+    padding: $form-control-padding;
     outline: 0;
     font-size: 1rem;
 
@@ -322,7 +314,7 @@
   }
 
   .select2-result-label {
-    padding: 3px 7px 4px;
+    padding: 3px 7px 4px 0;
     margin: 0;
     cursor: pointer;
 
@@ -399,7 +391,7 @@
     height: auto !important;
     height: 1%;
     // scss-lint:enable DuplicateProperty
-    min-height: $form-input-height;
+    min-height: $form-control-height;
     margin: 0;
     padding: 0 5px 0 0;
     position: relative;
