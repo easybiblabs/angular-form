@@ -54,7 +54,8 @@
     "tv4": "1.0.15"
   },
   "napa": {
-    "angular-summernote": "summernote/angular-summernote#0.2.4"
+    "angular-summernote": "summernote/angular-summernote#0.2.4",
+    "angular-ui-bootstrap": "angular-ui/bootstrap#0.12.0"
   },
   "browser": {
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
@@ -99,6 +100,12 @@
         "bootstrap",
         "jquery:$",
         "angular-summernote"
+      ]
+    },
+    "angular-ui-bootstrap": {
+      "depends": [
+        "angular",
+        "bootstrap"
       ]
     },
     "angular-summernote": {
