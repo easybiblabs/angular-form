@@ -14,21 +14,17 @@ module.exports = (function() {
         var backupValidationMessage = angular.copy(scope.form.validationMessage);
 
         scope.$watch(function() {
-          return ngModel.$viewValue;
+          return scope.form.invalidate;
         }, function(value) {
           if (value) {
-            element.attr('sf-invalidate', false);
             scope.form.validationMessage = backupValidationMessage;
+            console.log("VIEWVALUE", value, scope.form.invalidate, scope.form);
+            if (typeof scope.form.invalidate !== 'undefined') {
+              ngModel.$setValidity('schema', !(scope.form.invalidate));
+            }
           }
         });
 
-        scope.$watch(function() {
-          return attr.sfInvalidate;
-        }, function(value) {
-          if (scope.$eval(value)) {
-            ngModel.$setValidity('schema', false);
-          }
-        });
       }
     };
   }
