@@ -12,9 +12,11 @@ module.exports = (function() {
         $rootScope.$on('schemaFormInvalidate', function(event, data) {
 
           var form = scope.$eval(attr.sfForm);
+          console.log("INVALIDATING", data, form);
           angular.forEach(form[0].items, function(field) {
             angular.forEach(data.items, function(item) {
               if (item.name === field.name) {
+                console.log("setting invalidate", item.name, data.value);
                 field.invalidate = data.value;
                 if (item.message) {
                   field.validationMessage = {
