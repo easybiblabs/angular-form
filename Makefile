@@ -12,9 +12,6 @@ endif
 install:
 	$(MAKE) npm
 
-release:
-	gulp release
-
 npm:
 	npm install
 	which gulp || $(MAYBE_SUDO) npm install -g gulp@3.8.6
@@ -29,4 +26,7 @@ gulp-ci:
 	gulp lint
 
 karma:
+	karma start karma.conf.js
+
+karma-single:
 	karma start karma.conf.js --single-run
