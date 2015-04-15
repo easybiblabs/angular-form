@@ -4,8 +4,8 @@
   require('./index');
   require('../decorators');
 
-  require('ui.bootstrap.typeahead');
   require('angular-schema-form');
+  require('angular-bootstrap');
 
   describe('typeahead directive', function() {
     beforeEach(angular.mock.module('form-typeahead'));

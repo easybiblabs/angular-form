@@ -44,6 +44,7 @@
     "angular-mocks": "1.3.0",
     "angular-translate": "2.6.0",
     "angular-schema-form": "0.7.13",
+    "angular-bootstrap": "0.12.0",
     "bootstrap": "3.3.2",
     "jquery": "2.1.1",
     "moment": "2.9.0",
@@ -55,10 +56,11 @@
   },
   "napa": {
     "angular-summernote": "summernote/angular-summernote#0.2.4",
-    "angular-ui-bootstrap": "angular-ui/bootstrap#0.12.0"
+    "angular-bootstrap": "angular-ui/bootstrap#0.12.0"
   },
   "browser": {
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
+    "angular-bootstrap": "./node_modules/angular-bootstrap/src/typeahead/typeahead.js",
     "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.min.js",
     "pickadate/picker": "./node_modules/pickadate/lib/picker.js",
     "pickadate/picker.date": "./node_modules/pickadate/lib/picker.date.js",
@@ -102,7 +104,12 @@
         "angular-summernote"
       ]
     },
-    "angular-ui-bootstrap": {
+    "angular-bootstrap-typeahead": {
+      "depends": [
+        "angular-bootstrap"
+      ]
+    },
+    "angular-bootstrap": {
       "depends": [
         "angular",
         "bootstrap"

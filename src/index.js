@@ -2,6 +2,7 @@ window.jQuery = window.$ = require('jquery');
 require('angular-sanitize');
 require('angular-schema-form');
 require('angular-summernote');
+require('angular-bootstrap');
 require('pickadate/picker');
 require('pickadate/picker.date');
 
@@ -12,6 +13,7 @@ require('./modules/invalidator');
 require('./modules/constraints');
 require('./modules/texteditor');
 require('./modules/select');
+require('./modules/typeahead');
 
 require('./utility/time');
 require('./utility/objectpath');
@@ -27,6 +29,7 @@ module.exports = (function(){
     'form-texteditor',
     'form-decorators',
     'form-datepicker',
+    'form-typeahead',
     'sf-attrs'
   ]);
 })();
