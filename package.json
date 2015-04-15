@@ -60,7 +60,8 @@
   },
   "browser": {
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
-    "angular-bootstrap": "./node_modules/angular-bootstrap/src/typeahead/typeahead.js",
+    "angular-bootstrap-typeahead": "./node_modules/angular-bootstrap/src/typeahead/typeahead.js",
+    "angular-bootstrap-position": "./node_modules/angular-bootstrap/src/position/position.js",
     "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.min.js",
     "pickadate/picker": "./node_modules/pickadate/lib/picker.js",
     "pickadate/picker.date": "./node_modules/pickadate/lib/picker.date.js",
@@ -106,10 +107,10 @@
     },
     "angular-bootstrap-typeahead": {
       "depends": [
-        "angular-bootstrap"
+        "angular-bootstrap-position"
       ]
     },
-    "angular-bootstrap": {
+    "angular-bootstrap-position": {
       "depends": [
         "angular",
         "bootstrap"
