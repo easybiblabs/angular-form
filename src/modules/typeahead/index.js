@@ -6,5 +6,7 @@ module.exports = (function() {
     'pascalprecht.translate',
     'schemaForm',
     'ui.bootstrap.typeahead'
-  ]).config(require('./form-typeahead'));
+  ])
+    .directive('typeahead', require('./angular-typeahead'))
+    .config(require('./form-typeahead'));
 })();

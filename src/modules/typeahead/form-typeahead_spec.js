@@ -43,7 +43,7 @@
 
         $compile(el)(scope);
         $rootScope.$apply();
-        el.children().length.should.be.equal(1);
+        el.children().length.should.be.equal(188);
       });
     });
   });
