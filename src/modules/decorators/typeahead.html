@@ -1,0 +1,21 @@
+<div class="form-group {{ form.containerStyle }}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false}">
+  <select ng-model="$$value$$"
+          ng-model-options="form.ngModelOptions"
+          sf-changed="form"
+          class="form-control"
+          schema-validate="form"
+          typeahead
+          config="form.config"
+          ng-required="form.required"
+          placeholder="{{form.placeholder}}"
+          ng-options="option.value as option.name for option in form.titleMap">
+    <option></option>
+  </select>
+  <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
+  <span ng-if="form.feedback !== false"
+        class="form-control-feedback"
+        ng-class="evalInScope(form.feedback)"></span>
+  <div class="form-error-message"
+       ng-show="(hasError() && errorMessage(schemaError()))"
+       ng-bind-html="(hasError() && errorMessage(schemaError()))"></div>
+</div>

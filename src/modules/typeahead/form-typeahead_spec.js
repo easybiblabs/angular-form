@@ -33,8 +33,7 @@
           key: 'school'
         }];
 
-        var el = angular.element('<form sf-schema="schema" sf-form="form" sf-model="school"></form>');
-
+        // var el = angular.element('<form sf-schema="schema" sf-form="form" sf-model="school"></form>');
         // $compile(el)(scope);
         // $rootScope.$apply();
       });
