@@ -26,7 +26,4 @@ gulp-ci:
 	gulp lint
 
 karma:
-	karma start karma.conf.js
-
-karma-single:
 	karma start karma.conf.js --single-run
