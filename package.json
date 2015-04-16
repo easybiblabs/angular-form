@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "napa": "napa",
-    "install": "napa"
+    "install": "napa",
+    "pretest": "gulp lint",
+    "test": "karma start karma.conf.js"
   },
   "private": true,
   "repository": {
