@@ -2,11 +2,10 @@ module.exports = (function() {
   'use strict';
 
   angular.module('form-typeahead', [
-    'form-decorators',
-    'pascalprecht.translate',
+    'ui.bootstrap.typeahead',
     'schemaForm',
-    'ui.bootstrap.typeahead'
+    'form-decorators'
   ])
-    .directive('typeahead', require('./angular-typeahead'))
-    .config(require('./form-typeahead'));
+    .config(require('./form-typeahead'))
+    .directive('typeahead', require('./angular-typeahead'));
 })();

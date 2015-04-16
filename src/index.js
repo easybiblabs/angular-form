@@ -2,6 +2,7 @@ window.jQuery = window.$ = require('jquery');
 require('angular-sanitize');
 require('angular-schema-form');
 require('angular-summernote');
+require('angular-ui-bootstrap-typeahead');
 require('pickadate/picker');
 require('pickadate/picker.date');
 
