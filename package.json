@@ -56,13 +56,14 @@
   },
   "napa": {
     "angular-summernote": "summernote/angular-summernote#0.2.4",
-    "angular-bootstrap": "angular-ui/bootstrap#0.12.0"
+    "angular-ui-bootstrap": "angular-ui/bootstrap#0.12.0"
   },
   "browser": {
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
-    "angular-bootstrap-typeahead": "./node_modules/angular-bootstrap/src/typeahead/typeahead.js",
-    "angular-bootstrap-position": "./node_modules/angular-bootstrap/src/position/position.js",
-    "angular-bootstrap-bindHtml": "./node_modules/angular-bootstrap/src/bindHtml/bindHtml.js",
+    "angular-ui-bootstrap": false,
+    "angular-ui-bootstrap-typeahead": "./node_modules/angular-ui-bootstrap/src/typeahead/typeahead.js",
+    "angular-ui-bootstrap-position": "./node_modules/angular-ui-bootstrap/src/position/position.js",
+    "angular-ui-bootstrap-bindHtml": "./node_modules/angular-ui-bootstrap/src/bindHtml/bindHtml.js",
     "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.min.js",
     "pickadate/picker": "./node_modules/pickadate/lib/picker.js",
     "pickadate/picker.date": "./node_modules/pickadate/lib/picker.date.js",
@@ -106,13 +107,13 @@
         "angular-summernote"
       ]
     },
-    "angular-bootstrap-typeahead": {
+    "angular-ui-bootstrap-typeahead": {
       "depends": [
-        "angular-bootstrap-position",
-        "angular-bootstrap-bindHtml"
+        "angular-ui-bootstrap-position",
+        "angular-ui-bootstrap-bindHtml"
       ]
     },
-    "angular-bootstrap-position": {
+    "angular-ui-bootstrap-position": {
       "depends": [
         "angular",
         "bootstrap"
