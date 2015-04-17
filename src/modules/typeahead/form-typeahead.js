@@ -1,9 +1,15 @@
 module.exports = (function() {
   'use strict';
 
-  /**
-   * @ngInject
-   */
+  var enumToTitleMap = function(enm) {
+    var titleMap = []; // canonical titleMap format is a list.
+    enm.forEach(function(name) {
+      titleMap.push({name: name, value: name});
+    });
+    return titleMap;
+  };
+
+  /* @ngInject */
   return function(schemaFormProvider, schemaFormDecoratorsProvider, sfPathProvider) {
 
     var typeahead = function(name, schema, options) {
@@ -11,6 +17,9 @@ module.exports = (function() {
         var f = schemaFormProvider.stdFormObj(name, schema, options);
         f.key = options.path;
         f.type = 'typeahead';
+        if (!f.titleMap && 'enum' in schema) {
+          f.titleMap = enumToTitleMap(schema.enum);
+        }
         options.lookup[sfPathProvider.stringify(options.path)] = f;
         return f;
       }
