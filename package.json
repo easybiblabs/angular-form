@@ -6,7 +6,7 @@
   "scripts": {
     "napa": "napa",
     "install": "napa",
-    "pretest": "gulp lint",
+    "pretest": "gulp lint; true",
     "test": "karma start karma.conf.js"
   },
   "private": true,
