@@ -17,3 +17,14 @@ gulp.task('form-decorators-cache', function() {
     .pipe(concat('form-decorators-cache.js'))
     .pipe(gulp.dest(paths.src + 'modules/decorators/'));
 });
+
+gulp.task('typeahead-templates', function() {
+    return gulp.src(paths.src + 'modules/typeahead/template/*.html')
+      .pipe(templateCache({
+        module: 'typeahead-templates',
+        moduleSystem: 'browserify',
+        root: 'template/typeahead',
+      }))
+      .pipe(concat('typeahead-templates.js'))
+      .pipe(gulp.dest(paths.src + 'modules/typeahead/template'));
+});
