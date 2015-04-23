@@ -2,39 +2,37 @@ module.exports = function($timeout) {
   'use strict';
 
   return {
-    restrict: 'A',
+    restrict: 'AEC',
     require: 'ngModel',
+    templateUrl: 'templates/typeahead-popup.html',
     scope: {
-      config: '='
+      prompt: '@',
+      title: '@',
+      items: '=',
+      model: '=',
+      onSelect: '&'
     },
-    link: function(scope, element, attr, ngModel) {
-      var evalInParentScope = function(value) {
-        return scope.$parent.$eval(value);
+    link: function(scope) {
+      scope.handleSelection = function(selectedItem) {
+        scope.model = selectedItem;
+        scope.current = 0;
+        scope.selected = true;
+
+        $timeout(function() {
+          scope.onSelect();
+        }, 200);
       };
 
-      var config = evalInParentScope(attr.config);
+      scope.current = 0;
+      scope.selected = true;
 
-      if (!angular.isDefined(config)) {
-        config = {};
-      }
+      scope.isCurrent = function(index) {
+        return scope.current === index;
+      };
 
-      $timeout(function() {}, 0);
-
-      ngModel.$parsers.unshift(function(value) {
-        ngModel.$setValidity('schema', true);
-        return value;
-      });
-
-      // model -> DOM validation
-      ngModel.$formatters.unshift(function(value) {
-        if (typeof value === 'undefined') {
-          ngModel.$setValidity('schema', false);
-          return null;
-        }
-
-        return value;
-      });
-
+      scope.setCurrent = function(index) {
+        scope.current = index;
+      };
     }
   };
 };
