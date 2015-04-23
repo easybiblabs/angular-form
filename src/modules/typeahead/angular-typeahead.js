@@ -2,9 +2,8 @@ module.exports = function($timeout) {
   'use strict';
 
   return {
-    restrict: 'AEC',
+    restrict: 'AE',
     require: 'ngModel',
-    templateUrl: 'templates/typeahead-popup.html',
     scope: {
       prompt: '@',
       title: '@',
@@ -12,7 +11,14 @@ module.exports = function($timeout) {
       model: '=',
       onSelect: '&'
     },
-    link: function(scope) {
+    link: function(scope, element, attrs, viewValue) {
+      /* eslint-disable */
+      console.debug('___scope ', scope);
+      console.debug('___el ', element);
+      console.debug('___attrs ', attrs);
+      console.debug('___viewValue ', viewValue);
+      /* eslint-enable */
+
       scope.handleSelection = function(selectedItem) {
         scope.model = selectedItem;
         scope.current = 0;
