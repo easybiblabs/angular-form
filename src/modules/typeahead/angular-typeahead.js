@@ -2,28 +2,23 @@ module.exports = function($timeout, $http) {
   'use strict';
 
   return {
-    restrict: 'AE',
+    restrict: 'A',
     require: 'ngModel',
-    templateUrl: 'templates/templateurl.html',
+    templateUrl: 'template/typeahead/templateurl.html',
     scope: {
-      school: '@',
-      district: '@',
-      state: '@',
       schools: '=',
-      model: '='
+      config: '='
     },
-    link: function(scope, element, attrs, viewValue) {
+    link: function(scope, element, attrs, ngModel) {
 
       /* eslint-disable */
       console.debug('___scope ', scope);
       console.debug('___el ', element);
       console.debug('___attrs ', attrs);
-      console.debug('___viewValue ', viewValue);
+      console.debug('___ngModel ', ngModel);
       debugger;
 
       scope.getSchool = function(school, district, state) {
-        debugger;
-
         var params = {
           school: school || '',
           district: district || '',
