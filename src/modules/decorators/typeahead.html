@@ -5,12 +5,11 @@
          type="text"
          class="form-control"
          placeholder="form.placeholder"
-         typeahead
+         typeahead="object.school for object in schoolList | filter:$viewValue"
          sf-changed="form"
          schema-validate="form"
          config="form.config"
-         schools="getSchool($viewValue)"
-         ng-model="$$value$$"
+         ng-model="school"
          ng-model-options="form.ngModelOptions"
          ng-required="form.required"
          ng-options="option.value as option.name for option in form.titleMap" />

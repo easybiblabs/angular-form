@@ -9,6 +9,13 @@ module.exports = function($timeout, $http) {
       schools: '=',
       config: '='
     },
+    controller: function(scope) {
+      scope.schoolList = [
+        {id: '41', school: 'Thomas Edison High School'},
+        {id: '42', school: 'Kingsborough Community College'},
+        {id: '43', school: 'Oakland University'}
+      ];
+    },
     link: function(scope, element, attrs) {
       scope.getSchool = function(school, district, state) {
         var params = {
