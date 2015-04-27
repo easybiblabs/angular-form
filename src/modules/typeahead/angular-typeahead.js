@@ -3,25 +3,14 @@ module.exports = function($timeout, $http) {
 
   return {
     restrict: 'A',
-    require: 'ngModel',
-    templateUrl: '/template/typeahead/typeahead-popup.html',
     scope: {
-      schools: '=',
       config: '='
     },
-    controller: function(scope) {
-      scope.schoolList = [
-        {id: '41', school: 'Thomas Edison High School'},
-        {id: '42', school: 'Kingsborough Community College'},
-        {id: '43', school: 'Oakland University'}
-      ];
-    },
-    link: function(scope, element, attrs) {
-      scope.getSchool = function(school, district, state) {
+    controller: function($scope) {
+      $scope.getSchool = function(school) {
+        console.debug('___school passed to getSchool', school);
         var params = {
           school: school || '',
-          district: district || '',
-          state: state || ''
         };
 
         // set these in form definition or elsewhere and access in attrs param here
@@ -36,11 +25,14 @@ module.exports = function($timeout, $http) {
             responseType: 'json'
           };
 
-        return $http.post(attrs.registerTeacherAutocomplete || registerTeacherAutocomplete, params, requestHeaders)
+        return $http.post(registerTeacherAutocomplete, params, requestHeaders)
           .then(function(response) {
             return response.data;
           });
       };
+    },
+    link: function(scope, element, attrs) {
+      // scope.getSchool('MA'); works
     }
   };
 };
