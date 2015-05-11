@@ -13,7 +13,8 @@ gulp.task('eslint', function() {
     .src([
       paths.src + 'modules/**/*.js',
       paths.src + 'utility/**/*.js',
-      ignore(paths.src + 'modules/decorators/form-decorators-cache.js')
+      ignore(paths.src + 'modules/decorators/form-decorators-cache.js'),
+      ignore(paths.src + 'modules/typeahead/template/typeahead-templates.js')
     ])
     .pipe(eslint())
     .pipe(eslint.formatEach('compact', process.stderr))
@@ -25,7 +26,8 @@ gulp.task('jscs', function() {
     .src([
       paths.src + 'modules/**/*.js',
       paths.src + 'utility/**/*.js',
-      ignore(paths.src + 'modules/decorators/form-decorators-cache.js')
+      ignore(paths.src + 'modules/decorators/form-decorators-cache.js'),
+      ignore(paths.src + 'modules/typeahead/template/typeahead-templates.js')
     ])
     .pipe(jscs('./jscs.json'));
 });

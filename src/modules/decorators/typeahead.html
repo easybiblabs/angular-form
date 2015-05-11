@@ -1,0 +1,25 @@
+<div class="form-group {{ form.containerStyle }}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false}">
+    <span>(model {{school | json}})</span>
+
+      <input
+         type="text"
+         class="form-control"
+         typeahead="school for school in getSchool($viewValue) | filter:$viewValue"
+         sf-changed="form"
+         schema-validate="form"
+         config="form.config"
+         ng-model="school"
+         ng-model-options="form.ngModelOptions"
+         ng-required="form.required" />
+
+    <i ng-show="loadingSchools" class="glyphicon glyphicon-refresh"></i>
+
+  <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
+
+  <span ng-if="form.feedback !== false"
+        class="form-control-feedback"
+        ng-class="evalInScope(form.feedback)"></span>
+  <div class="form-error-message"
+       ng-show="(hasError() && errorMessage(schemaError()))"
+       ng-bind-html="(hasError() && errorMessage(schemaError()))"></div>
+</div>

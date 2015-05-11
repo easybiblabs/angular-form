@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "napa": "napa",
-    "install": "napa"
+    "install": "napa",
+    "pretest": "gulp lint; true",
+    "test": "karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -42,6 +44,7 @@
     "angular-mocks": "1.3.0",
     "angular-translate": "2.6.0",
     "angular-schema-form": "0.7.13",
+    "angular-bootstrap": "0.12.0",
     "bootstrap": "3.3.2",
     "jquery": "2.1.1",
     "moment": "2.9.0",
@@ -52,10 +55,15 @@
     "tv4": "1.0.15"
   },
   "napa": {
-    "angular-summernote": "summernote/angular-summernote#0.2.4"
+    "angular-summernote": "summernote/angular-summernote#0.2.4",
+    "angular-ui-bootstrap": "angular-ui/bootstrap#0.12.0"
   },
   "browser": {
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
+    "angular-ui-bootstrap": false,
+    "angular-ui-bootstrap-typeahead": "./node_modules/angular-ui-bootstrap/src/typeahead/typeahead.js",
+    "angular-ui-bootstrap-position": "./node_modules/angular-ui-bootstrap/src/position/position.js",
+    "angular-ui-bootstrap-bindHtml": "./node_modules/angular-ui-bootstrap/src/bindHtml/bindHtml.js",
     "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.min.js",
     "pickadate/picker": "./node_modules/pickadate/lib/picker.js",
     "pickadate/picker.date": "./node_modules/pickadate/lib/picker.date.js",
@@ -97,6 +105,18 @@
         "bootstrap",
         "jquery:$",
         "angular-summernote"
+      ]
+    },
+    "angular-ui-bootstrap-typeahead": {
+      "depends": [
+        "angular-ui-bootstrap-position",
+        "angular-ui-bootstrap-bindHtml"
+      ]
+    },
+    "angular-ui-bootstrap-position": {
+      "depends": [
+        "angular",
+        "bootstrap"
       ]
     },
     "angular-summernote": {

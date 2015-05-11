@@ -1,0 +1,556 @@
+/* ****************************************************************************
+   STYLE
+   ----------------------------------------------------------------------------
+   @name:         app/form/decorators/typeahead.scss
+   @author:       Imagine Easy Solutions
+   @note:         SCSS file for the bootstrap typeahead directive
+
+ =========================================================================== */
+
+.typeahead-container {
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  height: $form-control-height;
+
+  ~ .form-control-feedback {
+    right: $form-control-feedback-width;
+  }
+
+  .typeahead-choice {
+    display: block;
+    padding: $form-control-padding 0;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    white-space: nowrap;
+    line-height: $form-control-line-height;
+    text-decoration: none;
+    color: $default-dark-font-color;
+    margin-bottom: -1px;
+
+    @include user-select(none);
+
+    background-color: transparent;
+
+    > .typeahead-chosen {
+      margin-right: $form-control-feedback-width * 2;
+      display: block;
+      overflow: hidden;
+      opacity: 1;
+      white-space: nowrap;
+
+      text-overflow: ellipsis;
+      float: none;
+      width: auto;
+    }
+
+    abbr {
+      display: none;
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      right: 24px;
+      top: 8px;
+
+      font-size: 1px;
+      text-decoration: none;
+
+      border: 0;
+      cursor: pointer;
+      outline: 0;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .typeahead-arrow {
+      display: table;
+      width: $form-control-feedback-width;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      text-align: center;
+      color: $default-dark-font-color;
+
+      b {
+        display: table-cell !important;
+        vertical-align: middle;
+        text-align: center;
+      }
+    }
+  }
+
+  &:not(.typeahead-dropdown-open) {
+    .typeahead-choice {
+      .typeahead-arrow {
+        b {
+          @include icon('chevron-down');
+        }
+      }
+    }
+  }
+
+  [dir="rtl"] & .typeahead-choice {
+    padding: 0 8px 0 0;
+
+    > .typeahead-chosen {
+      margin-left: $form-control-feedback-width * 2;
+      margin-right: 0;
+    }
+
+    .typeahead-arrow {
+      left: 0;
+      right: auto;
+    }
+  }
+
+  &.typeahead-drop-above .typeahead-choice {
+
+    abbr {
+      display: inline-block;
+    }
+  }
+
+  &.typeahead-allowclear .typeahead-choice .typeahead-chosen {
+    margin-right: 42px;
+  }
+
+  &.typeahead-container-disabled .typeahead-choice {
+    background-color: $background-color-secondary;
+    cursor: default;
+
+    .typeahead-arrow {
+      color: gray(4);
+    }
+
+    abbr {
+      display: none;
+    }
+  }
+
+}
+
+.typeahead-drop-mask {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  z-index: 9998;
+}
+
+.typeahead-drop {
+  width: 100%;
+  margin-top: -1px;
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+
+  background: $background-color-primary;
+  color: $default-dark-font-color;
+
+  &.typeahead-drop-above {
+    margin-top: 1px;
+
+    &.typeahead-drop-active {
+      border-top: 1px solid color('blue');
+    }
+  }
+}
+
+.typeahead-drop-active {
+  border: 1px solid color('blue');
+}
+
+.typeahead-drop-auto-width {
+  width: auto;
+
+  .typeahead-search {
+    padding-top: 4px;
+  }
+}
+
+.typeahead-search {
+  // display: inline-block;
+  display: none;
+  width: 100%;
+  min-height: $form-control-height;
+  margin: 0;
+  padding: 4px;
+
+  position: relative;
+  z-index: 10000;
+
+  white-space: nowrap;
+
+  input {
+    width: 100%;
+    height: auto !important;
+    min-height: $form-control-height;
+    margin: 0;
+    padding: $form-control-padding;
+    outline: 0;
+    font-size: 1rem;
+
+    background: $background-color-primary;
+
+    &.typeahead-active {
+      background: $background-color-primary;
+    }
+  }
+
+  [dir="rtl"] & input {
+    padding: 4px 5px 4px 20px;
+
+    background: $background-color-primary;
+  }
+}
+
+.typeahead-container-active {
+  .typeahead-choice,
+  .typeahead-choices {
+    outline: none;
+  }
+}
+
+.typeahead-dropdown-open {
+  .typeahead-choice {
+    border-bottom-color: transparent;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    .typeahead-arrow {
+      background: transparent;
+      border-left: 0;
+      filter: none;
+    }
+  }
+
+  &:not(.typeahead-drop-above) {
+    .typeahead-choice {
+      .typeahead-arrow {
+        b {
+          @include icon('chevron-up');
+        }
+      }
+    }
+  }
+
+  &.typeahead-drop-above {
+    .typeahead-choice {
+      .typeahead-arrow {
+        b {
+          @include icon('chevron-down');
+        }
+      }
+    }
+
+    .typeahead-choice,
+    .typeahead-choices {
+      border-top-color: transparent;
+    }
+  }
+}
+
+.typeahead-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* results */
+.typeahead-results {
+  max-height: 200px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  [dir="rtl"] & {
+    padding: 0 4px 0 0;
+    margin: 4px 0 4px 4px;
+  }
+
+  .typeahead-result-sub {
+    margin: 0;
+    padding-left: 0;
+  }
+
+  li {
+    $padding-modifier: .5;
+    min-height: ($default-button-padding-vertical * $padding-modifier) * 2 + $default-button-line-height;
+    list-style: none;
+    display: list-item;
+    line-height: $default-button-line-height;
+    padding: $default-button-padding-vertical * $padding-modifier $default-button-padding-horizontal * $padding-modifier;
+    font-weight: bold;
+
+    // &.typeahead-result-with-children > .typeahead-result-label {
+
+    // }
+
+    em {
+      background: color('yellow');
+      font-style: normal;
+    }
+  }
+
+  .typeahead-result-label {
+    padding: 3px 7px 4px 0;
+    margin: 0;
+    cursor: pointer;
+
+    min-height: 1em;
+
+    @include user-select(none);
+  }
+
+  .typeahead-highlighted {
+    background: gray(5);
+
+    em {
+      background: transparent;
+    }
+
+    ul {
+      background: $background-color-primary;
+      color: $default-dark-font-color;
+    }
+
+    &.typeahead-disabled {
+      color: $default-link-disabled-color;
+      background: $background-color-secondary;
+      display: list-item;
+      cursor: default;
+    }
+  }
+
+  .typeahead-no-results,
+  .typeahead-searching,
+  .typeahead-ajax-error,
+  .typeahead-selection-limit {
+    background: $background-color-secondary;
+    display: list-item;
+    padding-left: 5px;
+  }
+
+  .typeahead-disabled {
+    background: $background-color-secondary;
+    display: list-item;
+    cursor: default;
+  }
+
+  .typeahead-selected {
+    display: none;
+  }
+
+  .typeahead-ajax-error {
+    background: rgba($background-color-primary, .2);
+  }
+}
+
+.typeahead-results-dept-1 .typeahead-result-label { padding-left: 20px; }
+.typeahead-results-dept-2 .typeahead-result-label { padding-left: 40px; }
+.typeahead-results-dept-3 .typeahead-result-label { padding-left: 60px; }
+.typeahead-results-dept-4 .typeahead-result-label { padding-left: 80px; }
+.typeahead-results-dept-5 .typeahead-result-label { padding-left: 100px; }
+.typeahead-results-dept-6 .typeahead-result-label { padding-left: 110px; }
+.typeahead-results-dept-7 .typeahead-result-label { padding-left: 120px; }
+
+.typeahead-more-results {
+  background: $background-color-secondary;
+  display: list-item;
+
+  &.typeahead-active {
+    background: $background-color-secondary;
+  }
+}
+
+/* multiselect */
+.typeahead-container-multi {
+  .typeahead-choices {
+    // scss-lint:disable DuplicateProperty
+    height: auto !important;
+    height: 1%;
+    // scss-lint:enable DuplicateProperty
+    min-height: $form-control-height;
+    margin: 0;
+    padding: 0 5px 0 0;
+    position: relative;
+
+    cursor: text;
+    overflow: hidden;
+
+    background-color: $background-color-primary;
+
+    li {
+      float: left;
+      list-style: none;
+    }
+
+    .typeahead-search-field {
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+
+      input {
+        padding: 5px;
+        margin: 1px 0;
+
+        font-family: sans-serif;
+        font-size: 100%;
+        color: gray(3);
+        outline: 0;
+        border: 0;
+        background: transparent !important;
+
+        // &.typeahead-active {
+
+        // }
+      }
+
+    }
+
+    .typeahead-search-choice {
+      padding: 3px 5px 3px 18px;
+      margin: 3px 0 3px 5px;
+      position: relative;
+
+      line-height: 13px;
+      color: $default-dark-font-color;
+      cursor: default;
+
+      @include user-select(none);
+
+      background-color: $background-color-secondary;
+
+      .typeahead-chosen {
+        cursor: default;
+      }
+    }
+
+    .typeahead-search-choice-focus {
+      background: gray(5);
+    }
+  }
+
+  .typeahead-container-active {
+    .typeahead-choices {
+      border: 1px solid color('blue');
+      outline: none;
+    }
+  }
+
+  [dir="rtl"] & .typeahead-choices {
+    padding: 0 0 0 5px;
+
+    li {
+      float: right;
+    }
+
+    .typeahead-search-choice {
+      margin: 3px 5px 3px 0;
+      padding: 3px 18px 3px 5px;
+    }
+  }
+
+  &.typeahead-container-disabled .typeahead-choices {
+    background-color: $background-color-secondary;
+    cursor: default;
+
+    .typeahead-search-choice {
+      padding: 3px 5px;
+      background-color: $background-color-secondary;
+
+      .typeahead-search-choice-close {
+        display: none;
+        background: none;
+      }
+    }
+  }
+}
+
+.typeahead-locked {
+  padding: 3px 5px !important;
+}
+
+.typeahead-default {
+  color: gray(4) !important;
+}
+
+.typeahead-search-choice-close {
+  display: block;
+  width: 12px;
+  height: 13px;
+  position: absolute;
+  right: 3px;
+  top: 4px;
+
+  font-size: 1px;
+  outline: none;
+
+  .typeahead-container-multi & {
+    left: 3px;
+
+    [dir="rtl"] & {
+      left: auto;
+      right: 2px;
+    }
+  }
+
+  [dir="rtl"] & {
+    right: auto;
+    left: 3px;
+  }
+}
+
+.typeahead-result-selectable .typeahead-match,
+.typeahead-result-unselectable .typeahead-match {
+  text-decoration: underline;
+}
+
+.typeahead-offscreen {
+  &,
+  &:focus {
+    clip: rect(0 0 0 0) !important;
+    width: 1px !important;
+    height: 1px !important;
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    outline: 0 !important;
+    left: 0px !important;
+    top: 0px !important;
+  }
+}
+
+.typeahead-display-none {
+  display: none;
+}
+
+.typeahead-measure-scrollbar {
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+}
