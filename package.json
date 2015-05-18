@@ -42,17 +42,15 @@
     "angular-mocks": "1.3.0",
     "angular-translate": "2.6.0",
     "angular-schema-form": "0.7.13",
+    "angular-summernote": "0.3.2",
     "bootstrap": "3.3.2",
     "jquery": "2.1.1",
     "moment": "2.9.0",
     "objectpath": "1.1.0",
     "pickadate": "3.5.3",
     "select2": "3.5.2-browserify",
-    "summernote": "0.5.9",
+    "summernote": "0.6.7",
     "tv4": "1.0.15"
-  },
-  "napa": {
-    "angular-summernote": "summernote/angular-summernote#0.2.4"
   },
   "browser": {
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
@@ -97,12 +95,6 @@
         "bootstrap",
         "jquery:$",
         "angular-summernote"
-      ]
-    },
-    "angular-summernote": {
-      "depends": [
-        "angular",
-        "summernote"
       ]
     }
   }
