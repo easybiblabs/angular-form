@@ -50,7 +50,7 @@
     "objectpath": "1.1.0",
     "pickadate": "3.5.3",
     "select2": "3.5.2-browserify",
-    "summernote": "0.6.7",
+    "summernote": "0.5.9",
     "tv4": "1.0.15"
   },
   "browser": {
