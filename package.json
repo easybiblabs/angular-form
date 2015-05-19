@@ -1,11 +1,11 @@
 {
   "name": "angular-form",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A module to provide angular form validation using json validator with the help of angular-schema-form. We have added some adjustments like * invalidate any formfield beside json validation to be able to display backend errors. * map doctrine backend validation to json schema validation ( enables to add constraints to entities in backend , and validate the form in javascript using the same constraints)",
   "main": "src/index.js",
   "scripts": {
-    "napa": "napa",
-    "install": "napa"
+    "gulp-lint": "gulp lint",
+    "karma": "karma start karma.conf.js --single-run"
   },
   "repository": {
     "type": "git",
@@ -28,11 +28,12 @@
     "gulp-jscs": "1.3.1",
     "gulp-minify-html": "1.0.0",
     "karma-browserify": "2.0.0",
+    "karma-cli": "0.0.4",
     "karma-mocha": "0.1.9",
     "karma-phantomjs-launcher": "0.1.4",
     "karma-sinon": "1.0.4",
     "karma-sinon-chai": "0.2.0",
-    "napa": "1.2.0",
+    "mocha": "1.20.1",
     "vinyl-source-stream": "1.0.0"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "angular-mocks": "1.3.0",
     "angular-translate": "2.6.0",
     "angular-schema-form": "0.7.13",
+    "angular-summernote": "0.3.2",
     "bootstrap": "3.3.2",
     "jquery": "2.1.1",
     "moment": "2.9.0",
@@ -50,9 +52,6 @@
     "select2": "3.5.2-browserify",
     "summernote": "0.5.9",
     "tv4": "1.0.15"
-  },
-  "napa": {
-    "angular-summernote": "summernote/angular-summernote#0.2.4"
   },
   "browser": {
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
@@ -97,12 +96,6 @@
         "bootstrap",
         "jquery:$",
         "angular-summernote"
-      ]
-    },
-    "angular-summernote": {
-      "depends": [
-        "angular",
-        "summernote"
       ]
     }
   }
