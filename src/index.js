@@ -1,4 +1,5 @@
 window.jQuery = window.$ = require('jquery');
+require('summernote');
 require('angular-sanitize');
 require('angular-schema-form');
 require('angular-summernote');
