@@ -15,3 +15,8 @@ gulp-ci:
 
 karma:
 	npm run-script karma
+
+### updating dist
+
+build:
+	gulp build
