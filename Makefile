@@ -8,13 +8,17 @@ npm:
 
 ### ci / testing
 
-ci: gulp-ci karma
+ci: gulp-ci karma distdiff
 
 gulp-ci:
 	npm run-script gulp-lint
 
 karma:
 	npm run-script karma
+
+distdiff: build
+	@git diff --exit-code dist/index.js || \
+		(echo "Release file \"dist/index.js\" is out of date."; false)
 
 ### updating dist
 
