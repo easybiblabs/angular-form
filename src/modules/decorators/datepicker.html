@@ -15,7 +15,7 @@
   <input class="datepicker_editable_input form-control"
          name="{{ form.name }}"
          ng-required="form.required"
-         placeholder="{{'application.date.format' | translate}}"
+         placeholder="{{form.placeholder}}"
          ng-class="{filled: $$value$$.length}"
          sf-attrs="{{ form.attributes }}" />
 
