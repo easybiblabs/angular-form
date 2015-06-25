@@ -62,8 +62,8 @@ describe('angular select2', function() {
     var choices = ['foo', 'bar', 'baz'];
     var index = 1;
     testPicker(choices);
-    view.find('select').val(index).trigger('change');
-    view.find('select').select2('val').should.equal(index + '');
+    view.find('select').val('string:' + choices[index]).trigger('change').click().change();
+    view.find('select').select2('val').should.equal('string:' + choices[index]);
     view.find('.select2-chosen').text().should.equal(choices[index]);
   });
 
