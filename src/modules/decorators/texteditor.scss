@@ -93,6 +93,7 @@
     overflow: auto;
     outline: none;
     min-height: 300px;
+    background-color: $background-color-primary;
 
     ul {
       @extend %ul;
@@ -215,12 +216,19 @@
   .note-color {
 
     .dropdown-toggle {
-      width: 20px;
-      padding-left: 5px;
+      padding-left: 0px;
+      padding-right: 0px;
     }
 
     .dropdown-menu {
       min-width: 340px;
+      margin-top: 0;
+      border-radius: 0;
+
+      li {
+        @include clearfix();
+        margin: 5px 0;
+      }
 
       .btn-group {
         margin: 0;
@@ -233,32 +241,32 @@
 
     .note-palette-title {
       font-size: 12px;
-      margin: 2px 7px;
-      text-align: center;
-      border-bottom: 1px solid gray(5);
+      line-height: 14px;
+      margin-bottom: 5px;
     }
 
     .note-color-reset {
-      font-size: 11px;
-      margin: 3px;
-      padding: 0 3px;
+      font-size: 0px;
       cursor: pointer;
-      border-radius: 5px;
+      @include icon('times');
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      &::before {
+        font-size: 14px;
+      }
     }
 
     .note-color-row {
       height: 20px;
-    }
-
-    .note-color-reset:hover {
-      background: gray(5);
     }
   }
 
   .note-para {
 
     .dropdown-menu {
-      min-width: 216px;
+      min-width: 200px;
 
       > div:first-child {
         margin-right: 5px;
@@ -268,7 +276,8 @@
 
   /* dropdown-menu for toolbar and popover */
   .dropdown-menu {
-    border-radius: $default-border-radius;
+    margin-top: 0;
+    border-radius: 0;
 
     /* dropdown-menu right position */
     /* http://forrst.com/posts/Bootstrap_right_positioned_dropdown-2KB */
@@ -306,6 +315,22 @@
 
   .note-fontsize-10 {
     font-size: 10px;
+  }
+
+  .note-fontsize {
+
+    .dropdown-toggle {
+      background-color: $background-color-primary;
+      border-radius: 0;
+      border: $form-control-border-width solid rgba(gray(1), .2);
+      box-shadow: inset 0px 1px 3px 0px rgba(121, 107, 145, .15);
+    }
+
+    .dropdown-menu {
+      margin-top: -1px;
+      border-radius: 0;
+      width: 100%;
+    }
   }
 
   /* color palette for toolbar and popover */
@@ -503,7 +528,17 @@
   }
 }
 
+
+.note-dimension-display {
+  text-align: center;
+}
+
+
 .texteditor {
+  .btn-toolbar .btn-group>:last-of-type {
+    margin-right: 0;
+  }
+
   .control-label {
     // See button padding and .ta-editor padding
     @include color-animation();

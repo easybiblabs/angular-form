@@ -1,11 +1,14 @@
 <div class="btn-group {{ form.containerStyle }}">
-  <input ng-repeat-start="item in form.items"
+  <button ng-repeat-start="item in form.items"
          type="submit"
          class="btn {{ item.style || 'btn-primary' }}"
          name="{{ item.name }}"
-         value="{{item.title}}"
          ng-if="item.type === 'submit'"
          sf-attrs="{{item.attributes}}">
+    <i ng-if="item.iconBefore"></i>
+    {{item.title}}
+    <i ng-if="item.iconAfter"></i>
+  </button>
   <button ng-repeat-end class="btn {{ item.style || 'btn-default' }}"
           type="button"
           name="{{ item.name }}"

@@ -8,9 +8,8 @@
  =========================================================================== */
 
 .datepicker {
-  input {
-    padding-right: $form-control-feedback-width * 2 !important;
-  }
+  padding-right: $form-control-feedback-width !important;
+  position: relative;
 
   .calendar-icon {
     @include icon('calendar');
@@ -25,7 +24,7 @@
     display: table;
     z-index: 2;
     cursor: pointer;
-    color: color('orange');
+    color: color('blue');
 
     &::before {
       display: table-cell;
@@ -33,7 +32,7 @@
     }
 
     &:hover {
-      color: color('orange', 'dark');
+      color: color('blue', 'dark');
     }
   }
 
@@ -68,7 +67,7 @@ $calendar-border-color: darken(color('purple', 'dark'), 17%);
   border: 0;
   background: gray(2);
   color: $default-light-font-color;
-  right: $form-control-feedback-width/2;
+  right: $form-control-feedback-width/-2;
   margin-right: -$picker-width/2;
   border-radius: $default-border-radius;
   @include carat('up', 20px, 50%, gray(2));
@@ -87,7 +86,7 @@ $calendar-border-color: darken(color('purple', 'dark'), 17%);
 
 .picker__header {
   margin-top: 0;
-  padding-top: $control-label-line-height;
+  padding-top: .825rem;
   height: 2.5rem;
 }
 
