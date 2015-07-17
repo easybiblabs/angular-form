@@ -23,6 +23,6 @@
        ng-bind-html="(hasError() && errorMessage(schemaError()))"></div>
   <div class="form-info-link"
        ng-if="form.infoLink">
-    <a ui-sref="{{form.infoLink.route}}">{{form.infoLink.text | translate}}</a>
+    <a ui-sref="{{form.infoLink.route}}" target="{{form.infoLink.target || '_self'}}">{{form.infoLink.text | translate}}</a>
   </div>
 </div>
