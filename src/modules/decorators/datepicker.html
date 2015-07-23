@@ -20,13 +20,13 @@
          sf-attrs="{{ form.attributes }}" />
 
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
-  
+
   <i class="calendar-icon"></i>
 
   <span ng-if="form.feedback !== false"
         class="form-control-feedback"
         ng-class="evalInScope(form.feedback)"></span>
   <div class="form-error-message"
-       ng-show="(hasError() && errorMessage(schemaError()))"
-       ng-bind-html="(hasError() && errorMessage(schemaError()))"></div>
+       ng-show="hasError()"
+       sf-message="form.description"></div>
 </div>

@@ -18,7 +18,8 @@
       {{ form.add || 'Add'}}
     </button>
   </div>
+  
   <div class="help-block"
-       ng-show="(hasError() && errorMessage(schemaError())) || form.description"
-       ng-bind-html="(hasError() && errorMessage(schemaError())) || form.description"></div>
+       ng-show="hasError()"
+       sf-message="form.description"></div>
 </div>

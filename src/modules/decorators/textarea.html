@@ -11,5 +11,5 @@
         class="form-control-feedback"
         ng-class="evalInScope(form.feedback)"></span>
   -->
-  <span class="form-error-message" ng-bind="(hasError() && errorMessage(schemaError()))"</span>
+  <span class="form-error-message" ng-show="hasError()" sf-message="form.description"></span>
 </div>
