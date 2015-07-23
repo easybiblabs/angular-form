@@ -41,13 +41,13 @@
     "angular-loading-bar": "0.6.*",
     "angular-mocks": "1.3.0",
     "angular-sanitize": "1.3.14",
-    "angular-schema-form": "0.8.0",
+    "angular-schema-form": "0.8.4",
     "angular-summernote": "0.3.2",
     "angular-translate": "2.6.0",
     "bootstrap": "3.3.2",
     "jquery": "2.1.1",
     "moment": "2.9.0",
-    "objectpath": "1.1.0",
+    "objectpath": "1.2.1",
     "pickadate": "3.5.3",
     "select2": "3.5.2-browserify",
     "summernote": "0.5.9",
@@ -55,7 +55,6 @@
   },
   "browser": {
     "angular-summernote": "./node_modules/angular-summernote/dist/angular-summernote.min.js",
-    "angular-schema-form": "./node_modules/angular-schema-form/dist/schema-form.min.js",
     "pickadate/picker": "./node_modules/pickadate/lib/picker.js",
     "pickadate/picker.date": "./node_modules/pickadate/lib/picker.date.js",
     "summernote": "./node_modules/summernote/dist/summernote.js"
@@ -74,16 +73,6 @@
     },
     "angular": {
       "exports": "angular"
-    },
-    "angular-schema-form": {
-      "depends": [
-        "moment",
-        "objectpath:ObjectPath",
-        "tv4:tv4"
-      ]
-    },
-    "objectpath": {
-      "exports": "global:ObjectPath"
     },
     "moment": {
       "exports": "moment"

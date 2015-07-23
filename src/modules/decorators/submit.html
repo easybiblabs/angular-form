@@ -4,11 +4,13 @@
          class="btn {{ form.style || 'btn-primary' }}"
          value="{{form.title}}"
          ng-if="form.type === 'submit'"
+         ng-disabled="form.readonly"
          sf-attrs="{{form.attributes}}">
   <button class="btn {{ form.style || 'btn-default' }}"
           type="button"
           name="{{ form.name }}"
           ng-click="buttonClick($event,form)"
+          ng-disabled="form.readonly"
           ng-if="form.type !== 'submit'"
           sf-attrs="{{form.attributes}}">
     <i ng-if="form.iconBefore"></i>
