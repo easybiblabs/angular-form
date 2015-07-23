@@ -48,9 +48,17 @@ module.exports = (function() {
     // we're using jquery.extend because we don't want to overwrite existing properties
     // angular.extend causes properties to be overwritten
     // try it, there is a test for it =)
-    angular.forEach(form[0].items, function(value) {
-      if (angular.isDefined(_diff.form[value.name])) {
-        jQuery.extend(true, value, _diff.form[value.name]);
+    angular.forEach(form, function(formItem) {
+      if (formItem.items) {
+        angular.forEach(formItem.items, function(value) {
+          if (angular.isDefined(_diff.form[value.name])) {
+            jQuery.extend(true, value, _diff.form[value.name]);
+          }
+        });
+      } else {
+        if (angular.isDefined(_diff.form[formItem.name])) {
+          jQuery.extend(true, formItem, _diff.form[formItem.name]);
+        }
       }
     });
 
