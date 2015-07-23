@@ -15,7 +15,8 @@ describe('notBlank constraint mapper', function() {
     var formConstraint = {
       'testTitle': {
         validationMessage: {
-          'default': 'required.message'
+          'default': 'required.message',
+		  302: 'required.message'
         }
       }
     };

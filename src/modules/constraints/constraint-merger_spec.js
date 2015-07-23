@@ -41,7 +41,8 @@ describe('constraintMerger', function() {
           validationMessage: {
             200: 'test.title.length.min',
             201: 'test.title.length.max',
-            'default': 'test.required'
+            'default': 'test.required',
+            302: 'test.required'
           }
         }
       });
@@ -106,7 +107,8 @@ describe('constraintMerger', function() {
         validationMessage: {
           200: 'test.title.length.min',
           201: 'test.title.length.max',
-          'default': 'test.required'
+          'default': 'test.required',
+          302: 'test.required'
         }
       });
 
@@ -165,6 +167,7 @@ describe('constraintMerger', function() {
           200: 'test.title.length.min',
           201: 'test.title.length.max',
           'default': 'test.required',
+          302: 'test.required',
           '205': 'Test title is required'
         }
       });
