@@ -25,7 +25,7 @@ describe('constraint mapper service', function() {
         validationMessage: {
           201: 'test.title.length.max',
           'default': 'test.required',
-		  '302': 'test.required'
+          '302': 'test.required'
         }
       }
     });

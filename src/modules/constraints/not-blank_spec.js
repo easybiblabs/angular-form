@@ -16,7 +16,7 @@ describe('notBlank constraint mapper', function() {
       'testTitle': {
         validationMessage: {
           'default': 'required.message',
-		  302: 'required.message'
+          302: 'required.message'
         }
       }
     };
