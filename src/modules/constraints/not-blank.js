@@ -23,8 +23,8 @@ module.exports = function(BaseConstraint) {
       this.result[fieldName] = {'validationMessage': {}};
     }
 
-    this.result[fieldName].
-      validationMessage[this.constraints[constrKey]] = constrVal;
+    this.result[fieldName].validationMessage[this.constraints[constrKey]] = constrVal;
+    this.result[fieldName].validationMessage['302'] = constrVal;
   };
 
   /**
