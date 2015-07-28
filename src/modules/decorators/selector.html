@@ -7,6 +7,7 @@
           select-two
           config="form.config"
           ng-required="form.required"
+          schema-validate="form"
           placeholder="{{form.placeholder}}"
           ng-options="option.value as option.name for option in form.titleMap">
     <option></option>
@@ -16,6 +17,6 @@
         class="form-control-feedback"
         ng-class="evalInScope(form.feedback)"></span>
   <div class="form-error-message"
-       ng-show="(hasError() && errorMessage(schemaError()))"
-       ng-bind-html="(hasError() && errorMessage(schemaError()))"></div>
+       ng-show="hasError()"
+       sf-message="form.description"></div>
 </div>

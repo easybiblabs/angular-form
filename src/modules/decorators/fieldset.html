@@ -1,4 +1,4 @@
 <fieldset class="{{ form.containerStyle }}" ng-disabled="form.readonly">
-  <legend ng-show="form.title">{{ form.title }}</legend>
+  <legend ng-class="{'sr-only': !showTitle() }">{{ form.title }}</legend>
   <sf-decorator ng-repeat="item in form.items" form="item"></sf-decorator>
 </fieldset>

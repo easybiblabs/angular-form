@@ -8,46 +8,36 @@ module.exports = (function() {
    */
   var FormValidator = function($rootScope) {
     this.$rootScope = $rootScope;
-    this.manuallyInvalidated = false;
   };
 
-  FormValidator.prototype.isValid = function(form, schema) {
-
-    // Return if the form is invalid because we manually invalidated it after
-    // receiving validation errors from the backend. We have to check that
-    // *before* triggering the frontend validation because that would make it
-    // valid again (that's how it got send to the backend in the first place).
-    if (form.$invalid && this.manuallyInvalidated) {
-      return false;
-    }
-
-    // Let the form validate itself - needed because validation is only
-    // automatically triggered on changes, but on submit we also want
-    // to validate the fields that didn't change yet.
+  FormValidator.prototype.isValid = function(form) {
     this.$rootScope.$broadcast('schemaFormValidate');
 
-    if (form.$invalid) {
-      return false;
+    // set all manually invalidated fields to valid - needed for the manual
+    // invalidation to work (see FormValidator.prototype.invalidate)
+    if (form.$error && form.$error.backend) {
+      var scope = this.$rootScope;
+      var errors = [];
+
+      angular.forEach(form.$error.backend, function(error) {
+        errors.push(error.$name);
+      });
+
+      angular.forEach(errors, function(error) {
+        scope.$broadcast('schemaForm.error.' + error, 'backend', true);
+      });
     }
 
-    // Form is valid: set all fields to valid - needed for the manual invalidation
-    // to work (see FormValidator.prototype.invalidate)
-    this.$rootScope.$emit('schemaFormInvalidate', {
-      items: Object.keys(schema.properties).map(function(value) {
-        return {
-          name: value,
-          message: ''
-        };
-      }), value: false
-    });
-    this.manuallyInvalidated = false;
-
-    return true;
+    return form.$valid;
   };
 
-  FormValidator.prototype.invalidate = function(items) {
-    this.manuallyInvalidated = true;
-    this.$rootScope.$emit('schemaFormInvalidate', {items: items, value: true});
+  FormValidator.prototype.invalidate = function(items, violationsName) {
+    var scope = this.$rootScope;
+    violationsName = violationsName || 'backend';
+
+    angular.forEach(items, function(violation) {
+      scope.$broadcast('schemaForm.error.' + violation.name, violationsName, violation.message);
+    });
   };
 
   return FormValidator;

@@ -8,7 +8,7 @@
       <li ng-repeat="item in modelArray track by $index"
           ng-click="$event.preventDefault() || (selected.tab = $index)"
           ng-class="{active: selected.tab === $index}">
-          <a href="#">{{evalExpr(form.title,{'$index':$index, value: item}) || $index}}</a>
+          <a href="#">{{interp(form.title,{'$index':$index, value: item}) || $index}}</a>
       </li>
       <li ng-click="$event.preventDefault() || appendToArray()">
         <a href="#">
@@ -25,10 +25,11 @@
            ng-repeat="item in modelArray track by $index"
            ng-show="selected.tab === $index"
            ng-class="{active: selected.tab === $index}">
-           <sf-decorator form="copyWithIndex($index)"></sf-decorator>
+           <sf-decorator ng-init="arrayIndex = $index" form="copyWithIndex($index)"></sf-decorator>
 
 
-           <button ng-click="deleteFromArray($index)"
+           <button ng-click="selected.tab = deleteFromArray($index).length - 1"
+                   ng-hide="form.readonly"
                    type="button"
                    class="btn {{ form.style.remove || 'btn-default' }} pull-right">
              <i class="fa fa-trash"></i>
@@ -44,7 +45,7 @@
       <li ng-repeat="item in modelArray track by $index"
           ng-click="$event.preventDefault() || (selected.tab = $index)"
           ng-class="{active: selected.tab === $index}">
-          <a href="#">{{evalExpr(form.title,{'$index':$index, value: item}) || $index}}</a>
+          <a href="#">{{interp(form.title,{'$index':$index, value: item}) || $index}}</a>
       </li>
       <li ng-click="$event.preventDefault() || appendToArray()">
         <a href="#">

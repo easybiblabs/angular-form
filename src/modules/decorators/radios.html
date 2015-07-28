@@ -1,14 +1,16 @@
-<div class="form-group {{ form.containerStyle }}" ng-class="{'has-error': hasError(), 'has-success': hasSuccess()}">
-  <label ng-show="showTitle()">{{form.title}}</label>
+<div class="form-group {{ form.containerStyle }}" ng-class="{'has-error': form.disableErrorState !== true &&  hasError(), 'has-success': form.disableSuccessState !== true && hasSuccess()}">
+  <label class="control-label {{form.labelHtmlClass}}" ng-show="showTitle()">{{form.title}}</label>
   <div class="radio" ng-repeat="item in form.titleMap" >
     <label>
       <input type="radio"
              sf-changed="form"
              ng-model="$$value$$"
              ng-model-options="form.ngModelOptions"
-             ng-value="item.value">
+             schema-validate="form"
+             ng-value="item.value"
+             name="{{form.key.join('.')}}">
       <span ng-bind-html="item.name"></span>
     </label>
   </div>
-  <div class="help-block" ng-show="form.description" ng-bind-html="form.description"></div>
+  <div class="help-block" sf-message="form.description"></div>
 </div>

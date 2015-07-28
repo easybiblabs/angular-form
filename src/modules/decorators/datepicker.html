@@ -4,29 +4,29 @@
          style="display: none;"
          ng-show="form.key"
          class="form-control"
-         ng-required="form.required"
+		 name="{{form.key.slice(-1)[0]}}"
          schema-validate="form"
          ng-model="$$value$$"
-         pick-a-date
+         pick-a-date="form.pickadate"
+		 ng-disabled="form.readonly"
          ng-class="{filled: $$value$$.length}"
          format="form.format"
          min-date="form.minDate"
          max-date="form.maxDate" />
   <input class="datepicker_editable_input form-control"
          name="{{ form.name }}"
-         ng-required="form.required"
          placeholder="{{form.placeholder}}"
          ng-class="{filled: $$value$$.length}"
          sf-attrs="{{ form.attributes }}" />
 
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
-  
+
   <i class="calendar-icon"></i>
 
   <span ng-if="form.feedback !== false"
         class="form-control-feedback"
         ng-class="evalInScope(form.feedback)"></span>
   <div class="form-error-message"
-       ng-show="(hasError() && errorMessage(schemaError()))"
-       ng-bind-html="(hasError() && errorMessage(schemaError()))"></div>
+       ng-show="hasError()"
+       sf-message="form.description"></div>
 </div>

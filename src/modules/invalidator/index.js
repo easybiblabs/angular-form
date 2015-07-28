@@ -5,7 +5,5 @@ module.exports = (function() {
     'pascalprecht.translate',
     'schemaForm'
   ])
-    .service('FormValidator', require('./form-validator'))
-    .directive('sfInvalidator', require('./sf-invalidator'))
-    .directive('sfInvalidate', require('./sf-invalidate'));
+    .service('FormValidator', require('./form-validator'));
 })();
